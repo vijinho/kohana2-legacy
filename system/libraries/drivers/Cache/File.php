@@ -105,7 +105,7 @@ class Cache_File_Driver implements Cache_Driver {
 		}
 
 		// Write out a serialized cache
-		return (bool) file_put_contents($this->directory.$id.'~'.$tags.'~'.$lifetime, serialize($data));
+		return (bool) file_put_contents($this->directory.$id.'~'.serialize($tags).'~'.$lifetime, serialize($data));
 	}
 
 	/**
