@@ -1,7 +1,7 @@
 <?php defined('SYSPATH') OR die('No direct access allowed.');
 /**
  * Kohana process control file, loaded by the front controller.
- * 
+ *
  * $Id: Bootstrap.php 4409 2009-06-06 00:48:26Z zombor $
  *
  * @package    Core
