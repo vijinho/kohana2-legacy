@@ -1,8 +1,11 @@
+SetEnv IN_PRODUCTION 0
+SetEnv DEBUG 0
+
 # Turn on URL rewriting
 RewriteEngine On
 
 # Installation directory
-RewriteBase /kohana/
+RewriteBase /
 
 # Protect application and system files from being viewed
 RewriteRule ^(application|modules|system) - [F,L]
@@ -12,4 +15,42 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite all other URLs to index.php/URL
-RewriteRule .* index.php/$0 [PT,L]
+RewriteRule .* index.php/$0 [PT,L]<VirtualHost 127.0.0.1:80>
+
+AllowOverride All
+
+# Force EVERY URL to contain a language in its first segment.
+# Redirect URLs without a language to the invalid xx language.
+RewriteCond %{REQUEST_URI} !^(/index\.php|/img|/images|/content|/audio|/js|/css|/robots\.txt|/favicon\.ico|/download|/pma|user_guide|MAMP)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+php_value allow_url_fopen On
+php_value default_charset utf-8
+php_value short_open_tag Off
+php_value expose_php Off
+php_value zend.ze1_compatibility_mode Off
+php_value register_argc_argv Off
+php_value register_globals Off
+php_value always_populate_raw_post_data Off
+php_value ignore_repeated_errors On
+php_value ignore_repeated_source On
+php_value session.use_cookies 1
+php_value session.use_only_cookies 0
+php_value session.use_trans_sid 0
+
+php_value upload_max_filesize 512M
+php_value memory_limit 512M
+php_value post_max_size 512M
+
+php_value sockets.use_system_read 0
+php_value default_socket_timeout 0
+php_value max_execution_time 1800
+php_value max_input_time 1800
+php_value set_time_limit 1800
+
+php_value log_errors On
+php_value display_errors On
+php_value html_errors On
+php_value magic_quotes_gpc Off
