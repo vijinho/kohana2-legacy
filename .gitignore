@@ -1,0 +1,8 @@
+application/cache/*
+application/logs/*
+.htaccess
+.DS_Store
+.bak
+nbproject
+*~
+*.tmp
