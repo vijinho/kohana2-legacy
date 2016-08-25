@@ -33,7 +33,7 @@ class Swift_Message_Encoder
   /**
    * Retreive an instance of the encoder as a singleton.
    * New instances are never ever needed since it's monostatic.
-   * @return Message_Encoder
+   * @return Swift_Message_Encoder
    */
   public static function instance()
   {
@@ -225,7 +225,7 @@ class Swift_Message_Encoder
   }
   /**
    * Return the QP encoded version of a string with no breaks
-   * @param string The input to encode
+   * @param string string input to encode
    * @param boolean True if the data we're encoding is binary
    * @return string
    */
@@ -281,6 +281,7 @@ class Swift_Message_Encoder
    * @param string Input data to encode
    * @param int Max line length
    * @param string The line ending
+   * @param string $data
    * @return string
    */
   public function encode7Bit($data, $chunk=76, $le="\r\n")
@@ -309,6 +310,7 @@ class Swift_Message_Encoder
    * @param string Input data to encode
    * @param int Maximum line length
    * @param string The line ending
+   * @param string $data
    * @return string
    */
   public function encode8Bit($data, $chunk=76, $le="\r\n")
@@ -369,7 +371,7 @@ class Swift_Message_Encoder
   /**
    * Detect if a string contains multi-byte non-ascii chars that fall in the UTF-8 ranges
    * @param string Data to detect UTF-8 sequences in
-   * @return boolean
+   * @return integer
    */
   public function isUTF8($data)
   {
@@ -408,6 +410,7 @@ class Swift_Message_Encoder
   /**
    * If the characters fall exclusively in the 7bit ascii range, return true
    * @param string Input to check
+   * @param string $data
    * @return boolean
    */
   public function is7BitAscii($data)
@@ -440,6 +443,8 @@ class Swift_Message_Encoder
    * SMTP requires the CRLF be used, but using sendmail in -t mode uses LF
    * This method also escapes dots on a start of line to avoid injection
    * @param string The data to fix
+   * @param string $data
+   * @param string $le
    * @return string
    */
   protected function fixLE($data, $le)
@@ -448,6 +453,11 @@ class Swift_Message_Encoder
     if ($le != "\n") $data = str_replace("\n", $le, $data);
     return $data = str_replace($le . ".", $le . "..", $data);
   }
+
+  /**
+   * @param integer $value
+   * @param integer $factor
+   */
   protected function getHcf($value, $factor)
   {
     return ($value - ($value % $factor));

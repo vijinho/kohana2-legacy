@@ -24,7 +24,7 @@ class Swift_Authenticator_CRAMMD5 implements Swift_Authenticator
    * Returns false on failure
    * @param string The username
    * @param string The password
-   * @param Swift The instance of Swift this authenticator is used in
+   * @param Swift Swift instance of Swift this authenticator is used in
    * @return boolean
    */
   public function isAuthenticated($user, $pass, Swift $swift)
@@ -52,6 +52,7 @@ class Swift_Authenticator_CRAMMD5 implements Swift_Authenticator
    * Generate a CRAM-MD5 hash from a challenge
    * @param string The string to get a hash from
    * @param string The challenge to use to make the hash
+   * @param string $challenge
    * @return string
    */
   public static function generateCRAMMD5Hash($password, $challenge)

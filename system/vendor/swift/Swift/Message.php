@@ -66,6 +66,8 @@ class Swift_Message extends Swift_Message_Mime
    * @param string Content-type
    * @param string Encoding
    * @param string Charset
+   * @param string $encoding
+   * @param string $charset
    */
   public function __construct($subject="", $body=null, $type="text/plain", $encoding=null, $charset=null)
   {
@@ -120,6 +122,7 @@ class Swift_Message extends Swift_Message_Mime
    * @param string Key 1
    * @param string Key 2
    * @param Object Reference
+   * @param string $where
    */
   protected function setReference($where, $key, $ref)
   {
@@ -130,6 +133,7 @@ class Swift_Message extends Swift_Message_Mime
    * Get a reference to an object (for complex reasons).
    * @param string Key 1
    * @param string Key 2
+   * @param string $where
    * @return Object
    */
   protected function getReference($where, $key)
@@ -150,6 +154,7 @@ class Swift_Message extends Swift_Message_Mime
    * Unless you know what you are doing you should be using generateId() rather than this method,
    * otherwise you may break compliancy with RFC 2822.
    * @param string The message ID string.
+   * @param null|string $id
    */
   public function setId($id)
   {
@@ -363,6 +368,7 @@ class Swift_Message extends Swift_Message_Mime
   /**
    * Set the date in the headers in RFC 2822 format
    * @param int The time as a UNIX timestamp
+   * @param integer $date
    */
   public function setDate($date)
   {
@@ -370,7 +376,7 @@ class Swift_Message extends Swift_Message_Mime
   }
   /**
    * Get the date as it looks in the headers
-   * @return string
+   * @return integer
    */
   public function getDate()
   {
@@ -469,7 +475,7 @@ class Swift_Message extends Swift_Message_Mime
   /**
    * Get the current message priority
    * Returns NULL if none set
-   * @return int
+   * @return string|null
    */
   public function getPriority()
   {
@@ -486,7 +492,7 @@ class Swift_Message extends Swift_Message_Mime
   }
   /**
    * Alias for getData()
-   * @return mixed The document body
+   * @return string The document body
    */
   public function getBody()
   {
@@ -593,6 +599,11 @@ class Swift_Message extends Swift_Message_Mime
    * @param string The location of the branch now
    * @param string The location of the branch after moving
    * @param string The key to identify the branch by in it's new location
+   * @param string $type
+   * @param string|null $nested_type
+   * @param string $old_branch
+   * @param string $new_branch
+   * @param string $tag
    */
   protected function moveBranchIn($type, $nested_type, $from, $old_branch, $new_branch, $tag)
   {
@@ -674,6 +685,9 @@ class Swift_Message extends Swift_Message_Mime
    * @param string The name of the old branch
    * @param string The name of the new branch
    * @param string The key of the branch being moved
+   * @param string $old_branch
+   * @param string $new_branch
+   * @param string $tag
    */
   protected function moveBranchOut($from, $old_branch, $new_branch, $tag)
   {

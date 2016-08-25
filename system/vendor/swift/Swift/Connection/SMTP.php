@@ -94,6 +94,7 @@ class Swift_Connection_SMTP extends Swift_ConnectionBase
    * @param string The remote server to connect to
    * @param int The remote port to connect to
    * @param int The encryption level to use
+   * @param integer $port
    */
   public function __construct($server="localhost", $port=null, $encryption=null)
   {
@@ -104,6 +105,7 @@ class Swift_Connection_SMTP extends Swift_ConnectionBase
   /**
    * Set the timeout to connect in seconds
    * @param int Timeout to use
+   * @param integer $time
    */
   public function setTimeout($time)
   {
@@ -120,6 +122,7 @@ class Swift_Connection_SMTP extends Swift_ConnectionBase
   /**
    * Set the remote server to connect to as a FQDN
    * @param string Server name
+   * @param string $server
    */
   public function setServer($server)
   {
@@ -336,7 +339,9 @@ class Swift_Connection_SMTP extends Swift_ConnectionBase
    * If none works, throw an exception
    * @param string Username
    * @param string Password
-   * @param Swift An instance of swift
+   * @param Swift Swift instance of swift
+   * @param string $user
+   * @param string $pass
    * @throws Swift_ConnectionException Upon failure to authenticate
    */
   public function runAuthenticators($user, $pass, Swift $swift)

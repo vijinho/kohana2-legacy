@@ -52,6 +52,7 @@ class Swift_Plugin_ConnectionRotator implements Swift_Events_SendListener, Swift
   /**
    * Set the number of emails to send before a connection rotation is tried
    * @param int Number of emails
+   * @param integer $threshold
    */
   public function setThreshold($threshold)
   {

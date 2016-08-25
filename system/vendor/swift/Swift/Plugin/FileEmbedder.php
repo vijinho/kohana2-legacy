@@ -221,6 +221,7 @@ class Swift_Plugin_FileEmbedder implements Swift_Events_BeforeSendListener
    * Returns an array with indexes "attributes" and "extensions".
    * Each element is an array listing the values within it.
    * @param string The name of the tag
+   * @param string $tag
    * @return array
    */
   public function getTagDefinition($tag)

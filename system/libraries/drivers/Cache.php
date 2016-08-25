@@ -35,6 +35,7 @@ interface Cache_Driver
 
     /**
      * Deletes all expired cache items.
+     * @return boolean|null
      */
     public function delete_expired();
 } // End Cache Driver

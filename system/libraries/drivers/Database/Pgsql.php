@@ -61,6 +61,9 @@ class Database_Pgsql_Driver extends Database_Driver
         return false;
     }
 
+    /**
+     * @param string $sql
+     */
     public function query($sql)
     {
         // Only cache if it's turned on, and only cache if it's not a write statement

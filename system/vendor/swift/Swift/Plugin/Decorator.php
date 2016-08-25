@@ -95,6 +95,7 @@ class Swift_Plugin_Decorator implements Swift_Events_BeforeSendListener
   /**
    * Check if the body can be replaced in the given mime type.
    * @param string The mime type
+   * @param string|false $type
    * @return boolean
    */
   public function isPermittedType($type)
@@ -184,6 +185,7 @@ class Swift_Plugin_Decorator implements Swift_Events_BeforeSendListener
    * Perform a str_replace() over the given value.
    * @param array The list of replacements as (search => replacement)
    * @param string The string to replace
+   * @param string $value
    * @return string
    */
   protected function replace($replacements, $value)

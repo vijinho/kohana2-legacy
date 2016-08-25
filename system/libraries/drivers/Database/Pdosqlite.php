@@ -58,6 +58,9 @@ class Database_Pdosqlite_Driver extends Database_Driver
         return $this->link;
     }
 
+    /**
+     * @param string $sql
+     */
     public function query($sql)
     {
         try {
@@ -273,6 +276,8 @@ class Pdosqlite_Result extends Database_Result
      * @param  resource  database link
      * @param  boolean   return objects or arrays
      * @param  string    SQL query that was run
+     * @param PDOStatement $result
+     * @param PDO $link
      */
     public function __construct($result, $link, $object = true, $sql)
     {
@@ -396,6 +401,9 @@ class Pdosqlite_Result extends Database_Result
         return $field_names;
     }
 
+    /**
+     * @param integer $offset
+     */
     public function seek($offset)
     {
         // To request a scrollable cursor for your PDOStatement object, you must

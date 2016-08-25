@@ -19,7 +19,7 @@ class download_Core
      * @param   string  a file path or file name
      * @param   mixed   data to be sent if the filename does not exist
      * @param   string  suggested filename to display in the download
-     * @return  void
+     * @return  false|null
      */
     public static function force($filename = null, $data = null, $nicename = null)
     {

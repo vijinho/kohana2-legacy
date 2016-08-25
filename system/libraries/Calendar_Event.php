@@ -54,7 +54,7 @@ class Calendar_Event_Core extends Event_Observer
      * @chainable
      * @param   string  condition key
      * @param   mixed   condition value
-     * @return  object
+     * @return  Calendar_Event_Core
      */
     public function condition($key, $value)
     {
@@ -82,7 +82,7 @@ class Calendar_Event_Core extends Event_Observer
      *
      * @chainable
      * @param   string  CSS class name
-     * @return  object
+     * @return  Calendar_Event_Core
      */
     public function add_class($class)
     {
@@ -96,7 +96,7 @@ class Calendar_Event_Core extends Event_Observer
      *
      * @chainable
      * @param   string  CSS class name
-     * @return  object
+     * @return  Calendar_Event_Core
      */
     public function remove_class($class)
     {
@@ -110,7 +110,7 @@ class Calendar_Event_Core extends Event_Observer
      *
      * @chainable
      * @param   string  HTML output
-     * @return  object
+     * @return  Calendar_Event_Core
      */
     public function output($str)
     {
@@ -124,7 +124,7 @@ class Calendar_Event_Core extends Event_Observer
      *
      * @chainable
      * @param   string  CSS class name
-     * @return  object
+     * @return  false|null
      */
     public function notify($data)
     {
@@ -257,6 +257,7 @@ class Calendar_Event_Core extends Event_Observer
      * with the "occurrence" condition.
      *
      * @param   integer  UNIX timestamp
+     * @param integer $timestamp
      * @return  integer
      */
     protected function day_occurrence($timestamp)

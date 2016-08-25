@@ -151,7 +151,7 @@ class ORM_Core
      * Allows serialization of only the object data and state, to prevent
      * "stale" objects being unserialized, which also requires less memory.
      *
-     * @return  array
+     * @return  string[]
      */
     public function __sleep()
     {
@@ -418,7 +418,7 @@ class ORM_Core
      * can be nested using 'object1:object2' syntax
      *
      * @param string $target_path
-     * @return void
+     * @return ORM_Core
      */
     public function with($target_path)
     {
@@ -614,7 +614,7 @@ class ORM_Core
      * Saves the current object.
      *
      * @chainable
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function save()
     {
@@ -715,7 +715,7 @@ class ORM_Core
      * relationships that have been created with other objects.
      *
      * @chainable
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function delete($id = null)
     {
@@ -736,7 +736,7 @@ class ORM_Core
      *
      * @chainable
      * @param   array  ids to delete
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function delete_all($ids = null)
     {
@@ -761,7 +761,7 @@ class ORM_Core
      * Unloads the current object and clears the status.
      *
      * @chainable
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function clear()
     {
@@ -791,7 +791,7 @@ class ORM_Core
      *
      * @chainable
      * @param   boolean  force reloading
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function reload_columns($force = false)
     {
@@ -945,7 +945,7 @@ class ORM_Core
      *
      * @chainable
      * @param   string  SQL query to clear
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function clear_cache($sql = null)
     {
@@ -1067,7 +1067,7 @@ class ORM_Core
      *
      * @chainable
      * @param   array  values to load
-     * @return  ORM
+     * @return  ORM_Core
      */
     public function load_values(array $values)
     {

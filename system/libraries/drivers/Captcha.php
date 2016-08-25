@@ -141,6 +141,8 @@ abstract class Captcha_Driver
      * @param   resource  gd image color identifier for start color
      * @param   resource  gd image color identifier for end color
      * @param   string    direction: 'horizontal' or 'vertical', 'random' by default
+     * @param integer $color1
+     * @param integer $color2
      * @return  void
      */
     public function image_gradient($color1, $color2, $direction = null)
@@ -197,7 +199,7 @@ abstract class Captcha_Driver
      * Returns the img html element or outputs the image to the browser.
      *
      * @param   boolean  html output
-     * @return  mixed    html string or void
+     * @return  string|null    html string or void
      */
     public function image_render($html)
     {

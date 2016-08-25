@@ -159,6 +159,7 @@ class Swift
    * Send a new type of event to all objects which are listening for it
    * @param Swift_Events The event to send
    * @param string The type of event
+   * @param string $type
    */
   public function notifyListeners($e, $type)
   {
@@ -176,6 +177,7 @@ class Swift
   /**
    * Check if an option flag has been set
    * @param string Option name
+   * @param integer $option
    * @return boolean
    */
   public function hasOption($option)
@@ -202,6 +204,7 @@ class Swift
   /**
    * Set the FQDN of this server as it will identify itself
    * @param string The FQDN of the server
+   * @param string|boolean $name
    */
   public function setDomain($name)
   {
@@ -237,6 +240,7 @@ class Swift
    * Throws an exception if the response code wanted does not match the one returned
    * @param Swift_Event_ResponseEvent The full response from the service
    * @param int The 3 digit response code wanted
+   * @param integer $codes
    * @throws Swift_BadResponseException If the code does not match
    */
   protected function assertCorrectResponse(Swift_Events_ResponseEvent $response, $codes)
@@ -282,6 +286,7 @@ class Swift
    * Execute a command against the service and get the response
    * @param string The command to execute (leave off any CRLF!!!)
    * @param int The code to check for in the response, if any. -1 indicates that no response is wanted.
+   * @param integer $code
    * @return Swift_Events_ResponseEvent The server's response (could be multiple lines)
    * @throws Swift_ConnectionException If a code was expected but does not match the one returned
    */
@@ -479,6 +484,7 @@ class Swift
    * @param Swift_Message The message to send (leave out the recipient headers unless you are deliberately overriding them)
    * @param Swift_RecipientList The addresses to send to
    * @param Swift_Address The address the mail is from (sender)
+   * @param Swift_Address $from
    * @return int The number of successful recipients
    */
   public function batchSend(Swift_Message $message, Swift_RecipientList $to, $from)

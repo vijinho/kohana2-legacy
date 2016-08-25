@@ -19,6 +19,7 @@ final class Benchmark
      * Set a benchmark start point.
      *
      * @param   string  benchmark name
+     * @param string $name
      * @return  void
      */
     public static function start($name)
@@ -56,6 +57,7 @@ final class Benchmark
      *
      * @param   string   benchmark name, TRUE for all
      * @param   integer  number of decimal places to count to
+     * @param string|boolean $name
      * @return  array
      */
     public static function get($name, $decimals = 4)

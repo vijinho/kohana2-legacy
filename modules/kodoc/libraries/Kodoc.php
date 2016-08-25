@@ -197,6 +197,9 @@ class Kodoc_Core
         return $file;
     }
 
+    /**
+     * @param null|string $block
+     */
     protected function parse_comment($block)
     {
         if (($block = trim($block)) == '') {
@@ -286,6 +289,10 @@ class Kodoc_Core
         return $comment;
     }
 
+    /**
+     * @param string $token
+     * @param string $block
+     */
     protected function comment_block($token, $block)
     {
         if (empty($token) or empty($block)) {
@@ -302,6 +309,9 @@ class Kodoc_Core
         return '<'.$token.'>'.$block.'</'.$token.'>'."\n";
     }
 
+    /**
+     * @param string $class
+     */
     protected function parse_class($class)
     {
         // Use reflection to find information
@@ -576,6 +586,7 @@ class Kodoc_xCore
      *
      * Returns:
      *  TRUE or FALSE.
+     * @param string $line
      */
     protected function is_class($line)
     {
@@ -632,6 +643,7 @@ class Kodoc_xCore
      *
      * Returns:
      *  TRUE or FALSE.
+     * @param string $line
      */
     protected function is_property($line)
     {
@@ -699,6 +711,7 @@ class Kodoc_xCore
      *
      * Returns:
      *  TRUE or FALSE.
+     * @param string $line
      */
     protected function is_function($line)
     {

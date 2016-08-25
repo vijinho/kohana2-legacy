@@ -70,7 +70,7 @@ class Flot_Core
      *
      * @chainable
      * @param   object   a constructed Flot_Dataset
-     * @return  object
+     * @return  Flot_Core
      */
     public function add(Flot_Dataset $set, $label = null)
     {
@@ -89,7 +89,7 @@ class Flot_Core
      * @chainable
      * @param   string  option name
      * @param   mixed   options value
-     * @return  object
+     * @return  Flot_Core
      */
     public function set($key, $value)
     {

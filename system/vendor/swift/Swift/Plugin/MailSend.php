@@ -69,6 +69,7 @@ class Swift_Plugin_MailSend implements Swift_Events_SendListener, Swift_Events_B
   /**
    * Set the operating system string (changes behaviour with LE)
    * @param string The operating system
+   * @param string $os
    */
   public function setOS($os)
   {
@@ -150,6 +151,13 @@ class Swift_Plugin_MailSend implements Swift_Events_SendListener, Swift_Events_B
     $message->headers->set("Bcc", $bcc_orig);
   }
   
+  /**
+   * @param string $to
+   * @param string $subject
+   * @param string $message
+   * @param Swift_Message_Headers $headers
+   * @param string $params
+   */
   public function doMail($to, $subject, $message, $headers, $params)
   {
     $original_from = @ini_get("sendmail_from");

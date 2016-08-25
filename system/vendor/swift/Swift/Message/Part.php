@@ -64,7 +64,7 @@ class Swift_Message_Part extends Swift_Message_Mime
   }
   /**
    * Alias for getData()
-   * @return mixed The document body
+   * @return string The document body
    */
   public function getBody()
   {

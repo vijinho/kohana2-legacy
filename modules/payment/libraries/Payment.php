@@ -101,7 +101,7 @@ class Payment_Core
      * Bulk setting of payment processing fields.
      *
      * @param   array   array of values to set
-     * @return  object  this object
+     * @return  Payment_Core  this object
      */
     public function set_fields($fields)
     {

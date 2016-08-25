@@ -162,6 +162,7 @@ class Auth_Core
      * based on the configured salt pattern.
      *
      * @param   string  plaintext password
+     * @param string $password
      * @return  string  hashed password string
      */
     public function hash_password($password, $salt = false)
@@ -205,6 +206,7 @@ class Auth_Core
      * Perform a hash, using the configured method.
      *
      * @param   string  string to hash
+     * @param string $str
      * @return  string
      */
     public function hash($str)

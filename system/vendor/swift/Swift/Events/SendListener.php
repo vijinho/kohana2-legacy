@@ -19,6 +19,7 @@ interface Swift_Events_SendListener extends Swift_Events_Listener
   /**
    * Executes when Swift sends a message
    * @param Swift_Events_SendEvent Information about the message being sent
+   * @return void
    */
   public function sendPerformed(Swift_Events_SendEvent $e);
 }

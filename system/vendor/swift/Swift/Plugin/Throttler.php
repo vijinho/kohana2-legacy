@@ -82,6 +82,7 @@ class Swift_Plugin_Throttler extends Swift_Plugin_BandwidthMonitor implements Sw
   /**
    * Wait for $seconds before continuing
    * @param int The number of seconds to wait
+   * @param double $secs
    */
   public function wait($secs)
   {
@@ -106,6 +107,7 @@ class Swift_Plugin_Throttler extends Swift_Plugin_BandwidthMonitor implements Sw
   /**
    * Set the number of emails sent
    * @param int Emails sent so far
+   * @param integer $num
    */
   public function setSent($num)
   {

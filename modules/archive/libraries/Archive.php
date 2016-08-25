@@ -54,7 +54,7 @@ class Archive_Core
      * @param   string   file or directory to add
      * @param   string   name to use for the given file or directory
      * @param   bool     add files recursively, used with directories
-     * @return  object
+     * @return  Archive_Core
      */
     public function add($path, $name = null, $recursive = null)
     {

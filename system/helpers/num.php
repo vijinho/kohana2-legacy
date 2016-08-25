@@ -17,7 +17,7 @@ class num_Core
      *
      * @param   integer  number to round
      * @param   integer  number to round to
-     * @return  integer
+     * @return  double
      */
     public static function round($number, $nearest = 5)
     {

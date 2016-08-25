@@ -72,7 +72,6 @@ class upload_Core
     /**
      * Tests if input data is valid file type, even if no upload is present.
      *
-     * @param   array  $_FILES item
      * @return  bool
      */
     public static function valid($file)
@@ -88,7 +87,6 @@ class upload_Core
     /**
      * Tests if input data has valid upload data.
      *
-     * @param   array    $_FILES item
      * @return  bool
      */
     public static function required(array $file)
@@ -102,7 +100,6 @@ class upload_Core
     /**
      * Validation rule to test if an uploaded file is allowed by extension.
      *
-     * @param   array    $_FILES item
      * @param   array    allowed file extensions
      * @return  bool
      */
@@ -128,7 +125,6 @@ class upload_Core
      * B is the byte modifier: (B)ytes, (K)ilobytes, (M)egabytes, (G)igabytes.
      * Eg: to limit the size to 1MB or less, you would use "1M".
      *
-     * @param   array    $_FILES item
      * @param   array    maximum file size
      * @return  bool
      */

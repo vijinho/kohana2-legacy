@@ -317,7 +317,7 @@ final class Kohana
      * @param   string   item name
      * @param   boolean  force a forward slash (/) at the end of the item
      * @param   boolean  is the item required?
-     * @return  mixed
+     * @return  string
      */
     public static function config($key, $slash = false, $required = true)
     {
@@ -542,6 +542,8 @@ final class Kohana
      *
      * @param   string   unique name of cache
      * @param   integer  expiration in seconds
+     * @param string $name
+     * @param string $lifetime
      * @return  mixed
      */
     public static function cache($name, $lifetime)
@@ -898,6 +900,7 @@ final class Kohana
      *
      * @throws  Kohana_Exception
      * @param   string  name of class
+     * @param string $class
      * @return  bool
      */
     public static function auto_load($class)
@@ -977,9 +980,9 @@ final class Kohana
      * @param   string   filename to look for (without extension)
      * @param   boolean  file required
      * @param   string   file extension
-     * @return  array    if the type is config, i18n or l10n
+     * @return  string    if the type is config, i18n or l10n
      * @return  string   if the file is found
-     * @return  FALSE    if the file is not found
+     * @return  string    if the file is not found
      */
     public static function find_file($directory, $filename, $required = false, $ext = false)
     {
@@ -1490,6 +1493,7 @@ class Kohana_Exception extends Exception
      *
      * @param  string  i18n language key for the message
      * @param  array   addition line parameters
+     * @param string $error
      */
     public function __construct($error)
     {
@@ -1551,6 +1555,8 @@ class Kohana_User_Exception extends Kohana_Exception
      * @param   string  exception title string
      * @param   string  exception message string
      * @param   string  custom error template
+     * @param string $title
+     * @param null|string $message
      */
     public function __construct($title, $message, $template = false)
     {

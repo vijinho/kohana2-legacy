@@ -51,7 +51,7 @@ class Auth_User_Token_Model extends ORM
     /**
      * Deletes all expired tokens.
      *
-     * @return  void
+     * @return  Auth_User_Token_Model
      */
     public function delete_expired()
     {

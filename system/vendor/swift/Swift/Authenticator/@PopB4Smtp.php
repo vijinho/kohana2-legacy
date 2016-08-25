@@ -41,7 +41,7 @@ class Swift_Authenticator_PopB4Smtp implements Swift_Authenticator
    * Returns false on failure
    * @param string The username
    * @param string The password
-   * @param Swift The instance of Swift this authenticator is used in
+   * @param Swift Swift instance of Swift this authenticator is used in
    * @return boolean
    */
   public function isAuthenticated($user, $pass, Swift $swift)

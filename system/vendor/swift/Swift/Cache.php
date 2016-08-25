@@ -21,16 +21,19 @@ abstract class Swift_Cache
    * Append bytes to the cache buffer identified by $key
    * @param string The Cache key
    * @param string The bytes to append
+   * @param string $key
    */
   abstract public function write($key, $data);
   /**
    * Clear out the buffer for $key
    * @param string The cache key
+   * @param string $key
    */
   abstract public function clear($key);
   /**
    * Check if there is something in the cache for $key
    * @param string The cache key
+   * @param string $key
    * @return boolean
    */
   abstract public function has($key);
@@ -38,12 +41,14 @@ abstract class Swift_Cache
    * Read bytes from the cached buffer and seek forward in the buffer
    * Returns false once no more bytes are left to read
    * @param int The number of bytes to read (may be ignored)
+   * @param string $key
    * @return string
    */
   abstract public function read($key, $size=null);
   /**
    * A factory method to return an output stream object for the relevant location in the cache
    * @param string The cache key to fetch the stream for
+   * @param string $key
    * @return Swift_Cache_OutputStream
    */
   public function getOutputStream($key)

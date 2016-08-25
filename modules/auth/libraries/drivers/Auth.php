@@ -123,7 +123,7 @@ abstract class Auth_Driver
      * Completes a login by assigning the user to the session key.
      *
      * @param   string   username
-     * @return  TRUE
+     * @return  boolean
      */
     protected function complete_login($user)
     {

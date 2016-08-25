@@ -127,7 +127,7 @@ class Calendar_Core extends Event_Subject
      *
      * @chainable
      * @param   string  standard event type
-     * @return  object
+     * @return  Calendar_Core
      */
     public function standard($name)
     {

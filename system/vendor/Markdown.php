@@ -1014,6 +1014,10 @@ class Markdown_Parser {
 
 	var $list_level = 0;
 
+	/**
+	 * @param string $list_str
+	 * @param string $marker_any_re
+	 */
 	function processListItems($list_str, $marker_any_re) {
 	#
 	#	Process the contents of a single ordered or unordered list, splitting it
@@ -1117,6 +1121,9 @@ class Markdown_Parser {
 	}
 
 
+	/**
+	 * @param string $code
+	 */
 	function makeCodeSpan($code) {
 	#
 	# Create a code span markup for $code. Called from handleSpanToken.
@@ -1590,6 +1597,9 @@ class Markdown_Parser {
 	# hanlde UTF-8 if the default function does not exist.
 	var $utf8_strlen = 'mb_strlen';
 	
+	/**
+	 * @param string $text
+	 */
 	function detab($text) {
 	#
 	# Replace tabs with the appropriate amount of space.
@@ -2012,6 +2022,12 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 		
 		return array($parsed, $text);
 	}
+
+	/**
+	 * @param string $text
+	 * @param string $hash_method
+	 * @param boolean $md_attr
+	 */
 	function _hashHTMLBlocks_inHTML($text, $hash_method, $md_attr) {
 	#
 	# Parse HTML, calling _HashHTMLBlocks_InMarkdown for block tags.
@@ -2441,6 +2457,9 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 	}
 
 
+	/**
+	 * @return string
+	 */
 	function processDefListItems($list_str) {
 	#
 	#	Process the contents of a single definition list, splitting it
