@@ -183,6 +183,7 @@ class Swift_BatchMailer
    * @param Swift_Message To send
    * @param Swift_RecipientList Recipients (To: only)
    * @param Swift_Address The sender's address
+   * @param Swift_Address $sender
    * @return int The number sent to
    */
   public function send(Swift_Message $message, Swift_RecipientList $recipients, $sender)

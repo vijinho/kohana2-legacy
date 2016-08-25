@@ -144,6 +144,7 @@ class Swift_Connection_SMTP extends Swift_ConnectionBase
   /**
    * Set the remote port number to connect to
    * @param int Port number
+   * @param integer|null $port
    */
   public function setPort($port)
   {

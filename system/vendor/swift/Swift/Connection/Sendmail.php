@@ -191,6 +191,7 @@ class Swift_Connection_Sendmail extends Swift_ConnectionBase
   /**
    * Write a command to the open pipe
    * @param string The command to write
+   * @param string $command
    * @throws Swift_ConnectionException If the pipe cannot be written to
    */
   protected function pipeIn($command, $end="\r\n")

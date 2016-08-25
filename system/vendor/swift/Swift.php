@@ -178,7 +178,7 @@ class Swift
    * Check if an option flag has been set
    * @param string Option name
    * @param integer $option
-   * @return boolean
+   * @return integer
    */
   public function hasOption($option)
   {
