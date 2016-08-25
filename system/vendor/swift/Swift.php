@@ -328,6 +328,7 @@ class Swift
    * @param Swift_Message The message to send.  This does not need to (and shouldn't really) have any of the recipient headers set.
    * @param mixed The recipients to send to.  Can be a string, Swift_Address or Swift_RecipientList. Note that all addresses apart from Bcc recipients will appear in the message headers
    * @param mixed The address to send the message from.  Can either be a string or an instance of Swift_Address.
+   * @param Swift_Address $from
    * @return int The number of successful recipients
    * @throws Swift_ConnectionException If sending fails for any reason.
    */
