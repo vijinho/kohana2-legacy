@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.'); ?>
+<?php defined('SYSPATH') or die('No direct access allowed.'); ?>
 <div class="gmap-html">
 <span class="image"><?php echo html::image(array('src' => $location->link, 'alt' => $location->title, 'width' => 100, 'height' => 100)) ?></span>
 <h6 class="title"><?php echo $location->title ?></h6>

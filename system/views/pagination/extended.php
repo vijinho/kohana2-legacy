@@ -1,7 +1,7 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * Extended pagination style
- * 
+ *
  * @preview  « Previous | Page 2 of 11 | Showing items 6-10 of 52 | Next »
  */
 ?>

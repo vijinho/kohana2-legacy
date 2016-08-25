@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * Auth library configuration. By default, Auth will use the controller
  * database connection. If Database is not loaded, it will use use the default
@@ -43,7 +43,6 @@ $config['session_key'] = 'auth_user';
  * Usernames (keys) and hashed passwords (values) used by the File driver.
  * Default admin password is "admin". You are encouraged to change this.
  */
-$config['users'] = array
-(
-	// 'admin' => 'b3154acf3a344170077d11bdb5fff31532f679a1919e716a02',
+$config['users'] = array(
+    // 'admin' => 'b3154acf3a344170077d11bdb5fff31532f679a1919e716a02',
 );

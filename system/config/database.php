@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * @package  Database
  *
@@ -23,23 +23,21 @@
  *  cache         - Enable or disable query caching
  *	escape        - Enable automatic query builder escaping
  */
-$config['default'] = array
-(
-	'benchmark'     => TRUE,
-	'persistent'    => FALSE,
-	'connection'    => array
-	(
-		'type'     => 'mysql',
-		'user'     => 'dbuser',
-		'pass'     => 'p@ssw0rd',
-		'host'     => 'localhost',
-		'port'     => FALSE,
-		'socket'   => FALSE,
-		'database' => 'kohana'
-	),
-	'character_set' => 'utf8',
-	'table_prefix'  => '',
-	'object'        => TRUE,
-	'cache'         => FALSE,
-	'escape'        => TRUE
+$config['default'] = array(
+    'benchmark'     => true,
+    'persistent'    => false,
+    'connection'    => array(
+        'type'     => 'mysql',
+        'user'     => 'dbuser',
+        'pass'     => 'p@ssw0rd',
+        'host'     => 'localhost',
+        'port'     => false,
+        'socket'   => false,
+        'database' => 'kohana'
+    ),
+    'character_set' => 'utf8',
+    'table_prefix'  => '',
+    'object'        => true,
+    'cache'         => false,
+    'escape'        => true
 );

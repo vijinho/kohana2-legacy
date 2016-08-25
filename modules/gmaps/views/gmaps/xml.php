@@ -1,2 +1,2 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.'); ?>
+<?php defined('SYSPATH') or die('No direct access allowed.'); ?>
 <p><?=$location->title;?>, <br /><?=$location->description;?></p>

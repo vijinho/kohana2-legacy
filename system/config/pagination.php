@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * @package  Pagination
  *
@@ -14,12 +14,11 @@
  *  items_per_page - Number of items to display per page
  *  auto_hide      - Automatically hides pagination for single pages
  */
-$config['default'] = array
-(
-	'directory'      => 'pagination',
-	'style'          => 'classic',
-	'uri_segment'    => 3,
-	'query_string'   => '',
-	'items_per_page' => 20,
-	'auto_hide'      => FALSE,
+$config['default'] = array(
+    'directory'      => 'pagination',
+    'style'          => 'classic',
+    'uri_segment'    => 3,
+    'query_string'   => '',
+    'items_per_page' => 20,
+    'auto_hide'      => false,
 );

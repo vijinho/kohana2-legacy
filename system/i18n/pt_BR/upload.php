@@ -1,6 +1,5 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
-$lang = array
-(
+$lang = array(
     'not_writable' => 'O diretório de destino, %s, parece não ter permissão de escrita.',
 );

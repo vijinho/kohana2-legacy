@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * Unit_Test controller.
  *
@@ -9,14 +9,13 @@
  * @copyright  (c) 2007-2008 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-class Unit_test_Controller extends Controller {
+class Unit_test_Controller extends Controller
+{
+    const ALLOW_PRODUCTION = false;
 
-	const ALLOW_PRODUCTION = FALSE;
-
-	public function index()
-	{
-		// Run tests and show results!
-		echo new Unit_Test;
-	}
-
+    public function index()
+    {
+        // Run tests and show results!
+        echo new Unit_Test;
+    }
 }

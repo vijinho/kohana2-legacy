@@ -1,14 +1,13 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
 // Recreate method declaration
-$declaration = implode('', array
-(
-	$abstract   ? html::anchor('http://www.php.net/manual/language.oop5.abstract.php', 'abstract').' ' : '',
-	$final      ? html::anchor('http://www.php.net/manual/language.oop5.final.php', 'final').' ' : '',
-	html::anchor('http://www.php.net/manual/language.oop5.visibility.php', $visibility).' ',
-	$static     ? html::anchor('http://www.php.net/manual/language.oop5.static.php', 'static').' ' : '',
-	'function ',
-	$name
+$declaration = implode('', array(
+    $abstract   ? html::anchor('http://www.php.net/manual/language.oop5.abstract.php', 'abstract').' ' : '',
+    $final      ? html::anchor('http://www.php.net/manual/language.oop5.final.php', 'final').' ' : '',
+    html::anchor('http://www.php.net/manual/language.oop5.visibility.php', $visibility).' ',
+    $static     ? html::anchor('http://www.php.net/manual/language.oop5.static.php', 'static').' ' : '',
+    'function ',
+    $name
 ));
 
 ?>
@@ -18,101 +17,100 @@ $declaration = implode('', array
 
 <?php
 
-if ( ! empty($comment['about'])):
+if (! empty($comment['about'])):
 
-	echo arr::remove('about', $comment);
+    echo arr::remove('about', $comment);
 
 endif;
-if ( ! empty($parameters)):
+if (! empty($parameters)):
 
 ?>
 <p class="parameters"><strong>Parameters:</strong></p>
 <dl>
 <?php
 
-	foreach ($parameters as $i => $param):
+    foreach ($parameters as $i => $param):
 
-	if ( ! empty($comment['param'][$i])):
+    if (! empty($comment['param'][$i])):
 
-		// Extract the type and information
-		list ($type, $info) = explode(' ', $comment['param'][$i], 2);
+        // Extract the type and information
+        list($type, $info) = explode(' ', $comment['param'][$i], 2);
 
-		$type = Kodoc::humanize_type($type).' ';
-		$info = trim($info);
+        $type = Kodoc::humanize_type($type).' ';
+        $info = trim($info);
 
-	else:
+    else:
 
-		$type = '';
-		$info = '';
+        $type = '';
+        $info = '';
 
-	endif;
+    endif;
 
 ?>
 <dt><?php echo $type, $param['name'] ?></dt>
 <dd><?php
 
-	if (array_key_exists('default', $param)):
+    if (array_key_exists('default', $param)):
 
-		// Parameter default value
-		echo '<tt>('.Kodoc::humanize_value($param['default']).')</tt> ';
+        // Parameter default value
+        echo '<tt>('.Kodoc::humanize_value($param['default']).')</tt> ';
 
-	endif;
+    endif;
 
-	// Parameter information
-	echo $info;
+    // Parameter information
+    echo $info;
 
 ?></dd>
 
 <?php
 
-	endforeach;
+    endforeach;
 
-	if (isset($comment['param']))
-	{
-		// Remove parameter information from the comment
-		unset($comment['param']);
-	}
+    if (isset($comment['param'])) {
+        // Remove parameter information from the comment
+        unset($comment['param']);
+    }
 
 ?>
 </dl>
 <?php
 
 endif;
-if ( ! empty($comment)):
-	foreach ($comment as $tag => $vals):
+if (! empty($comment)):
+    foreach ($comment as $tag => $vals):
 
-		switch ($tag):
-			case 'throws':
-			case 'return':
-				foreach ($vals as $i => $val):
-					if (strpos($val, ' ') !== FALSE):
+        switch ($tag):
+            case 'throws':
+            case 'return':
+                foreach ($vals as $i => $val):
+                    if (strpos($val, ' ') !== false):
 
-						// Extract the type from the val
-						list ($type, $val) = explode(' ', $val, 2);
+                        // Extract the type from the val
+                        list($type, $val) = explode(' ', $val, 2);
 
-						// Add the type to the val
-						$val = Kodoc::humanize_type($type).' '.$val;
-					else:
-						$val = '<tt>'.$val.'</tt>';
-					endif;
+                        // Add the type to the val
+                        $val = Kodoc::humanize_type($type).' '.$val;
+                    else:
+                        $val = '<tt>'.$val.'</tt>';
+                    endif;
 
-					// Put the val back into the array
-					$vals[$i] = $val;
+                    // Put the val back into the array
+                    $vals[$i] = $val;
 
-				endforeach;
-			break;
-		endswitch;
+                endforeach;
+            break;
+        endswitch;
 
 ?>
 <p class="<?php echo $tag ?>"><strong><?php echo ucfirst($tag) ?>:</strong><?php
 
 
-		if (count($vals) === 1):
+        if (count($vals) === 1):
 
 ?> <?php echo current($vals) ?></p>
 <?php
 
-		else:
+        else:
 
 ?></p>
 <ul>
@@ -120,10 +118,10 @@ if ( ! empty($comment)):
 </ul>
 <?php
 
-		endif;
+        endif;
 
 
-	endforeach;
+    endforeach;
 endif;
 
 // echo Kohana::debug($comment);

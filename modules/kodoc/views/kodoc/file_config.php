@@ -1,7 +1,7 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
-if ( ! empty($source)):
-	list ($option, $value) = $source;
+if (! empty($source)):
+    list($option, $value) = $source;
 
 ?>
 <h4 class="option"><?php echo $option ?></h4>
@@ -14,21 +14,21 @@ endif;
 <?php echo $about ?>
 <?php
 
-if ( ! empty($note)):
-	foreach ($note as $n):
+if (! empty($note)):
+    foreach ($note as $n):
 
 ?>
 <p class="note"><?php echo $n ?></p>
 <?php
 
-	endforeach;
+    endforeach;
 endif;
 
 ?>
 </div>
 <?php
 
-if ( ! empty($source)):
+if (! empty($source)):
 
 ?>
 <p class="value">Default value: <code><?php echo $value ?></code></p>

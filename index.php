@@ -14,7 +14,7 @@
  *
  * @see http://docs.kohanaphp.com/installation/deployment
  */
-define('IN_PRODUCTION', FALSE);
+define('IN_PRODUCTION', false);
 
 /**
  * Website application directory. This directory should contain your application
@@ -59,7 +59,7 @@ error_reporting(E_ALL & ~E_STRICT);
  * Turning off display_errors will effectively disable Kohana error display
  * and logging. You can turn off Kohana errors in application/config/config.php
  */
-ini_set('display_errors', TRUE);
+ini_set('display_errors', true);
 
 /**
  * If you rename all of your .php files to a different extension, set the new
@@ -95,13 +95,10 @@ define('SYSPATH', str_replace('\\', '/', realpath($kohana_system)).'/');
 // Clean up
 unset($kohana_application, $kohana_modules, $kohana_system);
 
-if (file_exists(DOCROOT.'install'.EXT))
-{
-	// Load the installation tests
-	include DOCROOT.'install'.EXT;
-}
-else
-{
-	// Initialize Kohana
-	require SYSPATH.'core/Bootstrap'.EXT;
+if (file_exists(DOCROOT.'install'.EXT)) {
+    // Load the installation tests
+    include DOCROOT.'install'.EXT;
+} else {
+    // Initialize Kohana
+    require SYSPATH.'core/Bootstrap'.EXT;
 }

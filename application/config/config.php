@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * Base path of the web site. If this includes a domain, eg: localhost/kohana/
  * then a full URL will be used, eg: http://localhost/kohana/. If it only includes
@@ -30,7 +30,7 @@ $config['url_suffix'] = '';
  * The internal cache stores file paths and config entries across requests and
  * can give significant speed improvements at the expense of delayed updating.
  */
-$config['internal_cache'] = FALSE;
+$config['internal_cache'] = false;
 
 /**
  * Internal cache directory.
@@ -42,7 +42,7 @@ $config['internal_cache_path'] = APPPATH.'cache/';
  * is neglible when this is turned on. Can be turned off
  * if application directory is not in the webroot.
  */
-$config['internal_cache_encrypt'] = FALSE;
+$config['internal_cache_encrypt'] = false;
 
 /**
  * Encryption key for the internal cache, only used
@@ -61,18 +61,18 @@ $config['internal_cache_key'] = 'foobar-changeme';
  *
  * Do not enable this option if you are using output compression in php.ini!
  */
-$config['output_compression'] = FALSE;
+$config['output_compression'] = false;
 
 /**
  * Enable or disable global XSS filtering of GET, POST, and SERVER data. This
  * option also accepts a string to specify a specific XSS filtering tool.
  */
-$config['global_xss_filtering'] = TRUE;
+$config['global_xss_filtering'] = true;
 
 /**
  * Enable or disable hooks.
  */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = false;
 
 /**
  * Log thresholds:
@@ -93,7 +93,7 @@ $config['log_directory'] = APPPATH.'logs';
  * Enable or disable displaying of Kohana error pages. This will not affect
  * logging. Turning this off will disable ALL error pages.
  */
-$config['display_errors'] = TRUE;
+$config['display_errors'] = true;
 
 /**
  * Enable or disable statistics in the final output. Stats are replaced via
@@ -101,7 +101,7 @@ $config['display_errors'] = TRUE;
  *
  * @see http://docs.kohanaphp.com/general/configuration
  */
-$config['render_stats'] = TRUE;
+$config['render_stats'] = true;
 
 /**
  * Filename prefixed used to determine extensions. For example, an
@@ -114,12 +114,11 @@ $config['extension_prefix'] = 'MY_';
  * or relative to the docroot. Modules can include any resource that can exist
  * in your application directory, configuration files, controllers, views, etc.
  */
-$config['modules'] = array
-(
-	// MODPATH.'auth',      // Authentication
-	// MODPATH.'kodoc',     // Self-generating documentation
-	// MODPATH.'gmaps',     // Google Maps integration
-	// MODPATH.'archive',   // Archive utility
-	// MODPATH.'payment',   // Online payments
-	// MODPATH.'unit_test', // Unit testing
+$config['modules'] = array(
+    // MODPATH.'auth',      // Authentication
+    // MODPATH.'kodoc',     // Self-generating documentation
+    // MODPATH.'gmaps',     // Google Maps integration
+    // MODPATH.'archive',   // Archive utility
+    // MODPATH.'payment',   // Online payments
+    // MODPATH.'unit_test', // Unit testing
 );

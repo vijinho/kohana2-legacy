@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.'); ?>
+<?php defined('SYSPATH') or die('No direct access allowed.'); ?>
 <div id="menu">
 <ul>
 <?php
@@ -23,7 +23,7 @@ if (is_array($drivers)):
 
 foreach ($drivers as $driver):
 
-	$file = ($name === $driver) ? $driver : $name.'_'.$driver;
+    $file = ($name === $driver) ? $driver : $name.'_'.$driver;
 
 ?>
 <li><?php echo html::anchor('kodoc/'.$group.'/drivers/'.$file, $driver) ?></li>

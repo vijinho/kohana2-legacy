@@ -1,6 +1,6 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
-if (empty($this->kodoc) OR count($docs = $this->kodoc->get()) < 1):
+if (empty($this->kodoc) or count($docs = $this->kodoc->get()) < 1):
 
 ?>
 <p><strong>Kodoc not loaded</strong></p>
@@ -15,26 +15,26 @@ endif;
 
 <?php
 
-if ( ! empty($docs['comments'])):
+if (! empty($docs['comments'])):
 
-	foreach ($docs['comments'] as $comment):
-		if ($docs['type'] === 'config'):
+    foreach ($docs['comments'] as $comment):
+        if ($docs['type'] === 'config'):
 
-			echo new View('kodoc/file_config', $comment);
+            echo new View('kodoc/file_config', $comment);
 
-		elseif ( ! empty($comment['about'])):
+        elseif (! empty($comment['about'])):
 
-			echo $comment['about'];
+            echo $comment['about'];
 
-		endif;
-	endforeach;
+        endif;
+    endforeach;
 endif;
-if ( ! empty($docs['classes'])):
+if (! empty($docs['classes'])):
 
-	foreach ($docs['classes'] as $class):
+    foreach ($docs['classes'] as $class):
 
-		echo new View('kodoc/class', $class);
+        echo new View('kodoc/class', $class);
 
-	endforeach;
+    endforeach;
 endif;
 ?>

@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
 // Get the day names
 $days = Calendar::days(2);
@@ -31,17 +31,14 @@ $next = Router::$current_uri.'?'.http_build_query(array_merge($qs, array('month'
 <tr>
 <?php foreach ($week as $day):
 
-list ($number, $current, $data) = $day;
+list($number, $current, $data) = $day;
 
-if (is_array($data))
-{
-	$classes = $data['classes'];
-	$output = empty($data['output']) ? '' : '<ul class="output"><li>'.implode('</li><li>', $data['output']).'</li></ul>';
-}
-else
-{
-	$classes = array();
-	$output = '';
+if (is_array($data)) {
+    $classes = $data['classes'];
+    $output = empty($data['output']) ? '' : '<ul class="output"><li>'.implode('</li><li>', $data['output']).'</li></ul>';
+} else {
+    $classes = array();
+    $output = '';
 }
 
 ?>

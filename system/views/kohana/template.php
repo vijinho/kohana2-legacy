@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.'); ?>
+<?php defined('SYSPATH') or die('No direct access allowed.'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -8,7 +8,7 @@
 	<title><?php echo html::specialchars($title) ?></title>
 
 	<style type="text/css">
-	html { background: #83c018 url(<?php echo url::base(FALSE) ?>kohana.png) 50% 0 no-repeat; }
+	html { background: #83c018 url(<?php echo url::base(false) ?>kohana.png) 50% 0 no-repeat; }
 	body { width: 52em; margin: 200px auto 2em; font-size: 76%; font-family: Arial, sans-serif; color: #273907; line-height: 1.5; text-align: center; }
 	h1 { font-size: 3em; font-weight: normal; text-transform: uppercase; color: #fff; }
 	a { color: inherit; }

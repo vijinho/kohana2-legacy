@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * @package  Core
  *
@@ -9,9 +9,9 @@ $config['directory'] = DOCROOT.'upload';
 /**
  * Enable or disable directory creation.
  */
-$config['create_directories'] = FALSE;
+$config['create_directories'] = false;
 
 /**
  * Remove spaces from uploaded filenames.
  */
-$config['remove_spaces'] = TRUE;
+$config['remove_spaces'] = true;

@@ -30,29 +30,29 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <p>The following tests have been run to determine if Kohana will work in your environment. If any of the tests have failed, consult the <a href="http://docs.kohanaphp.com/installation">documentation</a> for more information on how to correct the problem.</p>
 
 <div id="tests">
-<?php $failed = FALSE ?>
+<?php $failed = false ?>
 <table cellspacing="0">
 <tr>
 <th>PHP Version</th>
 <?php if (version_compare(PHP_VERSION, '5.2', '>=')): ?>
 <td class="pass"><?php echo PHP_VERSION ?></td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">Kohana requires PHP 5.2 or newer, this version is <?php echo PHP_VERSION ?>.</td>
 <?php endif ?>
 </tr>
 <tr>
 <th>System Directory</th>
-<?php if (is_dir(SYSPATH) AND is_file(SYSPATH.'core/Bootstrap'.EXT)): ?>
+<?php if (is_dir(SYSPATH) and is_file(SYSPATH.'core/Bootstrap'.EXT)): ?>
 <td class="pass"><?php echo SYSPATH ?></td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">The configured <code>system</code> directory does not exist or does not contain required files.</td>
 <?php endif ?>
 </tr>
 <tr>
 <th>Application Directory</th>
-<?php if (is_dir(APPPATH) AND is_file(APPPATH.'config/config'.EXT)): ?>
+<?php if (is_dir(APPPATH) and is_file(APPPATH.'config/config'.EXT)): ?>
 <td class="pass"><?php echo APPPATH ?></td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">The configured <code>application</code> directory does not exist or does not contain required files.</td>
 <?php endif ?>
 </tr>
@@ -60,17 +60,17 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <th>Modules Directory</th>
 <?php if (is_dir(MODPATH)): ?>
 <td class="pass"><?php echo MODPATH ?></td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">The configured <code>modules</code> directory does not exist or does not contain required files.</td>
 <?php endif ?>
 </tr>
 <tr>
 <th>PCRE UTF-8</th>
-<?php if ( !function_exists('preg_match')): $failed = TRUE ?>
+<?php if (!function_exists('preg_match')): $failed = true ?>
 <td class="fail"><a href="http://php.net/pcre">PCRE</a> support is missing.</td>
-<?php elseif ( ! @preg_match('/^.$/u', 'ñ')): $failed = TRUE ?>
+<?php elseif (! @preg_match('/^.$/u', 'ñ')): $failed = true ?>
 <td class="fail"><a href="http://php.net/pcre">PCRE</a> has not been compiled with UTF-8 support.</td>
-<?php elseif ( ! @preg_match('/^\pL$/u', 'ñ')): $failed = TRUE ?>
+<?php elseif (! @preg_match('/^\pL$/u', 'ñ')): $failed = true ?>
 <td class="fail"><a href="http://php.net/pcre">PCRE</a> has not been compiled with Unicode property support.</td>
 <?php else: ?>
 <td class="pass">Pass</td>
@@ -80,7 +80,7 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <th>Reflection Enabled</th>
 <?php if (class_exists('ReflectionClass')): ?>
 <td class="pass">Pass</td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">PHP <a href="http://www.php.net/reflection">reflection</a> is either not loaded or not compiled in.</td>
 <?php endif ?>
 </tr>
@@ -88,7 +88,7 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <th>Filters Enabled</th>
 <?php if (function_exists('filter_list')): ?>
 <td class="pass">Pass</td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">The <a href="http://www.php.net/filter">filter</a> extension is either not loaded or not compiled in.</td>
 <?php endif ?>
 </tr>
@@ -96,7 +96,7 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <th>Iconv Extension Loaded</th>
 <?php if (extension_loaded('iconv')): ?>
 <td class="pass">Pass</td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">The <a href="http://php.net/iconv">iconv</a> extension is not loaded.</td>
 <?php endif ?>
 </tr>
@@ -105,7 +105,7 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <th>SPL Enabled</th>
 <?php if (function_exists('spl_autoload_register')): ?>
 <td class="pass">Pass</td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail"><a href="http://php.net/spl">SPL</a> is not enabled.</td>
 <?php endif ?>
 </tr>
@@ -113,16 +113,16 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <?php if (extension_loaded('mbstring')): ?>
 <tr>
 <th>Mbstring Not Overloaded</th>
-<?php if (ini_get('mbstring.func_overload') & MB_OVERLOAD_STRING): $failed = TRUE ?>
+<?php if (ini_get('mbstring.func_overload') & MB_OVERLOAD_STRING): $failed = true ?>
 <td class="fail">The <a href="http://php.net/mbstring">mbstring</a> extension is overloading PHP's native string functions.</td>
 <?php else: ?>
 <td class="pass">Pass</td>
 </tr>
 <?php endif ?>
-<?php else: // check for utf8_[en|de]code when mbstring is not available ?>
+<?php else: // check for utf8_[en|de]code when mbstring is not available?>
 <tr>
 <th>XML support</th>
-<?php if ( ! function_exists('utf8_encode')): $failed = TRUE ?>
+<?php if (! function_exists('utf8_encode')): $failed = true ?>
 <td class="fail">PHP is compiled without <a href="http://php.net/xml">XML</a> support, thus lacking support for <code>utf8_encode()</code>/<code>utf8_decode()</code>.</td>
 <?php else: ?>
 <td class="pass">Pass</td>
@@ -131,9 +131,9 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 <?php endif ?>
 <tr>
 <th>URI Determination</th>
-<?php if (isset($_SERVER['REQUEST_URI']) OR isset($_SERVER['PHP_SELF'])): ?>
+<?php if (isset($_SERVER['REQUEST_URI']) or isset($_SERVER['PHP_SELF'])): ?>
 <td class="pass">Pass</td>
-<?php else: $failed = TRUE ?>
+<?php else: $failed = true ?>
 <td class="fail">Neither <code>$_SERVER['REQUEST_URI']</code> or <code>$_SERVER['PHP_SELF']</code> is available.</td>
 <?php endif ?>
 </tr>
@@ -141,7 +141,7 @@ body { width: 42em; margin: 0 auto; font-family: sans-serif; font-size: 90%; }
 </table>
 
 <div id="results">
-<?php if ($failed === TRUE): ?>
+<?php if ($failed === true): ?>
 <p class="fail">Kohana may not work correctly with your environment.</p>
 <?php else: ?>
 <p class="pass">Your environment passed all requirements. Remove or rename the <code>install<?php echo EXT ?></code> file now.</p>

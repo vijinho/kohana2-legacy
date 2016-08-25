@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
 /*
 
@@ -16,8 +16,8 @@ CREATE TABLE `locations` (
 
 */
 
-class Location_Model extends ORM {
+class Location_Model extends ORM
+{
 
-	// Exciting!
-
+    // Exciting!
 } // End Location Model

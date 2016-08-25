@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.'); ?>
+<?php defined('SYSPATH') or die('No direct access allowed.'); ?>
 <style type="text/css">
 #kohana-unit-test
 {
@@ -119,18 +119,19 @@ text::alternate();
 
 		<?php else:
 
-			foreach ($methods as $method => $result):
+            foreach ($methods as $method => $result):
 
-				// Hide passed tests from report
-				if ($result === TRUE AND $hide_passed === TRUE)
-					continue;
+                // Hide passed tests from report
+                if ($result === true and $hide_passed === true) {
+                    continue;
+                }
 
-				?>
+                ?>
 
 				<tr class="<?php echo text::alternate('', 'k-altrow') ?>">
 					<td class="k-name"><?php echo $method ?></td>
 
-					<?php if ($result === TRUE): ?>
+					<?php if ($result === true): ?>
 
 						<td class="k-passed"><strong><?php echo Kohana::lang('unit_test.passed') ?></strong></td>
 
@@ -141,8 +142,8 @@ text::alternate();
 							<pre><?php echo html::specialchars($result->getMessage()) ?></pre>
 							<?php echo html::specialchars($result->getFile()) ?> (<?php echo Kohana::lang('unit_test.line') ?>&nbsp;<?php echo $result->getLine() ?>)
 
-							<?php if ($result->getDebug() !== NULL): ?>
-								<pre class="k-debug" title="Debug info"><?php echo '(', gettype($result->getDebug()), ') ', html::specialchars(var_export($result->getDebug(), TRUE)) ?></pre>
+							<?php if ($result->getDebug() !== null): ?>
+								<pre class="k-debug" title="Debug info"><?php echo '(', gettype($result->getDebug()), ') ', html::specialchars(var_export($result->getDebug(), true)) ?></pre>
 							<?php endif ?>
 
 						</td>

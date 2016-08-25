@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * Archive library gzip driver.
  *
@@ -9,51 +9,47 @@
  * @copyright  (c) 2007-2008 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-class Archive_Gzip_Driver implements Archive_Driver {
+class Archive_Gzip_Driver implements Archive_Driver
+{
+    public function create($paths, $filename = false)
+    {
+        $archive = new Archive('tar');
 
-	public function create($paths, $filename = FALSE)
-	{
-		$archive = new Archive('tar');
+        foreach ($paths as $set) {
+            $archive->add($set[0], $set[1]);
+        }
 
-		foreach ($paths as $set)
-		{
-			$archive->add($set[0], $set[1]);
-		}
+        $gzfile = gzencode($archive->create());
 
-		$gzfile = gzencode($archive->create());
+        if ($filename == false) {
+            return $gzfile;
+        }
 
-		if ($filename == FALSE)
-		{
-			return $gzfile;
-		}
+        if (substr($filename, -7) !== '.tar.gz') {
+            // Append tar extension
+            $filename .= '.tar.gz';
+        }
 
-		if (substr($filename, -7) !== '.tar.gz')
-		{
-			// Append tar extension
-			$filename .= '.tar.gz';
-		}
+        // Create the file in binary write mode
+        $file = fopen($filename, 'wb');
 
-		// Create the file in binary write mode
-		$file = fopen($filename, 'wb');
+        // Lock the file
+        flock($file, LOCK_EX);
 
-		// Lock the file
-		flock($file, LOCK_EX);
+        // Write the tar file
+        $return = fwrite($file, $gzfile);
 
-		// Write the tar file
-		$return = fwrite($file, $gzfile);
+        // Unlock the file
+        flock($file, LOCK_UN);
 
-		// Unlock the file
-		flock($file, LOCK_UN);
+        // Close the file
+        fclose($file);
 
-		// Close the file
-		fclose($file);
+        return (bool) $return;
+    }
 
-		return (bool) $return;
-	}
-
-	public function add_data($file, $name, $contents = NULL)
-	{
-		return FALSE;
-	}
-
+    public function add_data($file, $name, $contents = null)
+    {
+        return false;
+    }
 } // End Archive_Gzip_Driver Class

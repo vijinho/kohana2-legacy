@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * @package  Core
  *
@@ -16,14 +16,13 @@
  *  fonts      - Font files
  *  promote    - Valid response count threshold to promote user (FALSE to disable)
  */
-$config['default'] = array
-(
-	'style'      => 'basic',
-	'width'      => 150,
-	'height'     => 50,
-	'complexity' => 4,
-	'background' => '',
-	'fontpath'   => SYSPATH.'fonts/',
-	'fonts'      => array('DejaVuSerif.ttf'),
-	'promote'    => FALSE,
+$config['default'] = array(
+    'style'      => 'basic',
+    'width'      => 150,
+    'height'     => 50,
+    'complexity' => 4,
+    'background' => '',
+    'fontpath'   => SYSPATH.'fonts/',
+    'fonts'      => array('DejaVuSerif.ttf'),
+    'promote'    => false,
 );

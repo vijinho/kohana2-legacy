@@ -1,6 +1,5 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
-$lang = array
-(
-	'general_error' => 'Wystąpił nieznany błąd podczas wysyłania wiadomości.',
+$lang = array(
+    'general_error' => 'Wystąpił nieznany błąd podczas wysyłania wiadomości.',
 );

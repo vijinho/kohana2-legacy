@@ -1,7 +1,7 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 /**
  * Classic pagination style
- * 
+ *
  * @preview  ‹ First  < 1 2 3 >  Last ›
  */
 ?>
