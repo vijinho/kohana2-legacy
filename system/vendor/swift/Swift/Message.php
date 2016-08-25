@@ -134,6 +134,7 @@ class Swift_Message extends Swift_Message_Mime
    * @param string Key 1
    * @param string Key 2
    * @param string $where
+   * @param string $key
    * @return Object
    */
   protected function getReference($where, $key)

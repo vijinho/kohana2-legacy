@@ -181,6 +181,7 @@ abstract class Swift_Message_Mime
   /**
    * Set the content type of this MIME document
    * @param string The content type to use in the same format as MIME 1.0 expects
+   * @param string $type
    */
   public function setContentType($type)
   {

@@ -297,6 +297,7 @@ class Pgsql_Result extends Database_Result
      * @param  resource  database link
      * @param  boolean   return objects or arrays
      * @param  string    SQL query that was run
+     * @param string $sql
      */
     public function __construct($result, $link, $object = true, $sql)
     {

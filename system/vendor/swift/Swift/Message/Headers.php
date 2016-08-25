@@ -73,6 +73,7 @@ class Swift_Message_Headers
   /**
    * Set the line ending character to use
    * @param string The line ending sequence
+   * @param string $le
    * @return boolean
    */
   public function setLE($le)
@@ -296,6 +297,7 @@ class Swift_Message_Headers
    * @param string The name of the main header
    * @param string The name of the attribute
    * @param string $name
+   * @param string $header
    * @return boolean
    */
   public function hasAttribute($header, $name)

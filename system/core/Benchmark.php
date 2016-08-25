@@ -42,6 +42,7 @@ final class Benchmark
      * Set a benchmark stop point.
      *
      * @param   string  benchmark name
+     * @param string|boolean $name
      * @return  void
      */
     public static function stop($name)
