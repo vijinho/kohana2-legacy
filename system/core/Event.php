@@ -91,7 +91,7 @@ final class Event
      * @param   string   event name
      * @param   integer  key to insert new event at
      * @param   array    event callback
-     * @return  void
+     * @return  boolean
      */
     private static function insert_event($name, $key, $callback)
     {
@@ -156,6 +156,7 @@ final class Event
      *
      * @param   string  event name
      * @param   array   specific callback to remove, FALSE for all callbacks
+     * @param string $name
      * @return  void
      */
     public static function clear($name, $callback = false)
@@ -205,6 +206,7 @@ final class Event
      * Check if a given event has been run.
      *
      * @param   string   event name
+     * @param string $name
      * @return  boolean
      */
     public static function has_run($name)

@@ -348,7 +348,7 @@ abstract class Database_Driver
      * Fetches SQL type information about a field, in a generic format.
      *
      * @param   string  field datatype
-     * @return  array
+     * @return  string
      */
     protected function sql_type($str)
     {
@@ -459,7 +459,7 @@ abstract class Database_Result implements ArrayAccess, Iterator, Countable
     /**
      * Returns the insert id from the result.
      *
-     * @return  mixed
+     * @return  integer
      */
     public function insert_id()
     {
@@ -480,6 +480,7 @@ abstract class Database_Result implements ArrayAccess, Iterator, Countable
      *
      * @param   boolean   return rows as objects
      * @param   mixed     type
+     * @param boolean $object
      * @return  array
      */
     abstract public function result_array($object = null, $type = false);

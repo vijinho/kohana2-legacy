@@ -229,6 +229,10 @@ class Unit_Test_Core
 
 abstract class Unit_Test_Case
 {
+    /**
+     * @param boolean $value
+     * @param integer $debug
+     */
     public function assert_true($value, $debug = null)
     {
         if ($value != true) {
@@ -247,6 +251,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param boolean $value
+     */
     public function assert_false($value, $debug = null)
     {
         if ($value != false) {
@@ -265,6 +272,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $expected
+     * @param integer $actual
+     */
     public function assert_equal($expected, $actual, $debug = null)
     {
         if ($expected != $actual) {
@@ -274,6 +285,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $expected
+     * @param integer $actual
+     */
     public function assert_not_equal($expected, $actual, $debug = null)
     {
         if ($expected == $actual) {
@@ -283,6 +298,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $expected
+     * @param string $actual
+     */
     public function assert_same($expected, $actual, $debug = null)
     {
         if ($expected !== $actual) {
@@ -292,6 +311,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $expected
+     * @param integer $actual
+     */
     public function assert_not_same($expected, $actual, $debug = null)
     {
         if ($expected === $actual) {
@@ -301,6 +324,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param boolean $value
+     */
     public function assert_boolean($value, $debug = null)
     {
         if (! is_bool($value)) {
@@ -310,6 +336,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     */
     public function assert_not_boolean($value, $debug = null)
     {
         if (is_bool($value)) {
@@ -319,6 +348,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param integer $value
+     */
     public function assert_integer($value, $debug = null)
     {
         if (! is_int($value)) {
@@ -328,6 +360,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     */
     public function assert_not_integer($value, $debug = null)
     {
         if (is_int($value)) {
@@ -337,6 +372,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param double $value
+     */
     public function assert_float($value, $debug = null)
     {
         if (! is_float($value)) {
@@ -346,6 +384,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param integer $value
+     */
     public function assert_not_float($value, $debug = null)
     {
         if (is_float($value)) {
@@ -355,6 +396,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param integer[] $value
+     */
     public function assert_array($value, $debug = null)
     {
         if (! is_array($value)) {
@@ -364,6 +408,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $key
+     */
     public function assert_array_key($key, $array, $debug = null)
     {
         if (! array_key_exists($key, $array)) {
@@ -373,6 +420,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     * @param string[] $array
+     */
     public function assert_in_array($value, $array, $debug = null)
     {
         if (! in_array($value, $array)) {
@@ -382,6 +433,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     */
     public function assert_not_array($value, $debug = null)
     {
         if (is_array($value)) {
@@ -391,6 +445,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param stdClass $value
+     */
     public function assert_object($value, $debug = null)
     {
         if (! is_object($value)) {
@@ -400,6 +457,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     */
     public function assert_not_object($value, $debug = null)
     {
         if (is_object($value)) {
@@ -418,6 +478,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param integer $value
+     */
     public function assert_not_null($value, $debug = null)
     {
         if ($value === null) {
@@ -427,6 +490,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     */
     public function assert_empty($value, $debug = null)
     {
         if (! empty($value)) {
@@ -436,6 +502,9 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     */
     public function assert_not_empty($value, $debug = null)
     {
         if (empty($value)) {
@@ -445,6 +514,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     * @param string $regex
+     */
     public function assert_pattern($value, $regex, $debug = null)
     {
         if (! is_string($value) or ! is_string($regex) or ! preg_match($regex, $value)) {
@@ -454,6 +527,10 @@ abstract class Unit_Test_Case
         return $this;
     }
 
+    /**
+     * @param string $value
+     * @param string $regex
+     */
     public function assert_not_pattern($value, $regex, $debug = null)
     {
         if (! is_string($value) or ! is_string($regex) or preg_match($regex, $value)) {
@@ -474,6 +551,7 @@ class Kohana_Unit_Test_Exception extends Exception
      *
      * @param   string  message
      * @param   mixed   debug info
+     * @param string $message
      * @return  void
      */
     public function __construct($message, $debug = null)

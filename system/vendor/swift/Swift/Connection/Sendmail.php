@@ -72,6 +72,7 @@ class Swift_Connection_Sendmail extends Swift_ConnectionBase
   /**
    * Set the timeout on the process
    * @param int The number of seconds
+   * @param integer $secs
    */
   public function setTimeout($secs)
   {
@@ -88,6 +89,7 @@ class Swift_Connection_Sendmail extends Swift_ConnectionBase
   /**
    * Set the operating flags for the MTA
    * @param string
+   * @param string $flags
    */
   public function setFlags($flags)
   {
@@ -104,6 +106,7 @@ class Swift_Connection_Sendmail extends Swift_ConnectionBase
   /**
    * Set the path to the binary
    * @param string The path (must be absolute!)
+   * @param string $path
    */
   public function setPath($path)
   {
@@ -161,6 +164,7 @@ class Swift_Connection_Sendmail extends Swift_ConnectionBase
   /**
    * Set the sendmail command (path + flags)
    * @param string Command
+   * @param string $command
    * @throws Swift_ConnectionException If the command is not correctly structured
    */
   public function setCommand($command)

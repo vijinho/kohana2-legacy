@@ -16,6 +16,7 @@ interface Payment_Driver
      * Sets driver fields and marks reqired fields as TRUE.
      *
      * @param  array  array of key => value pairs to set
+     * @return void
      */
     public function set_fields($fields);
 

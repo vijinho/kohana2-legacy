@@ -20,6 +20,7 @@ interface Swift_Events_DisconnectListener extends Swift_Events_Listener
   /**
    * Executes when Swift closes a connection
    * @param Swift_Events_DisconnectEvent Information about the connection
+   * @return void
    */
   public function disconnectPerformed(Swift_Events_DisconnectEvent $e);
 }

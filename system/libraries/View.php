@@ -27,7 +27,8 @@ class View_Core
      * @param   string  view name
      * @param   array   pre-load data
      * @param   string  type of file: html, css, js, etc.
-     * @return  object
+     * @param string $name
+     * @return  View
      */
     public static function factory($name = null, $data = null, $type = null)
     {
@@ -73,7 +74,8 @@ class View_Core
      * @chainable
      * @param   string  view filename
      * @param   string  view file type
-     * @return  object
+     * @param string $name
+     * @return  View_Core
      */
     public function set_filename($name, $type = null)
     {
@@ -105,7 +107,7 @@ class View_Core
      *
      * @param   string|array  name of variable or an array of variables
      * @param   mixed         value when using a named variable
-     * @return  object
+     * @return  View_Core
      */
     public function set($name, $value = null)
     {
@@ -158,7 +160,8 @@ class View_Core
      *
      * @param   string   name of variable
      * @param   mixed    variable to assign by reference
-     * @return  object
+     * @param string $name
+     * @return  View_Core
      */
     public function bind($name, & $var)
     {

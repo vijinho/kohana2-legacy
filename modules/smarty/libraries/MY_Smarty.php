@@ -56,6 +56,9 @@ class MY_Smarty_Core extends Smarty
         }
     }
 
+    /**
+     * @param string $directory
+     */
     public function checkDirectory($directory)
     {
         if ((! file_exists($directory) and ! @mkdir($directory, 0755)) or ! is_writable($directory) or !is_executable($directory)) {

@@ -71,11 +71,13 @@ abstract class Swift_Log
    * Add a new entry to the log
    * @param string The information to log
    * @param string The type of entry (see the constants: COMMAND, RESPONSE, ERROR, NORMAL)
+   * @param string $text
    */
   abstract public function add($text, $type = self::NORMAL);
   /**
    * Dump the contents of the log to the browser.
    * @param boolean True if the string should be returned rather than output.
+   * @return string
    */
   abstract public function dump($return_only=false);
   /**

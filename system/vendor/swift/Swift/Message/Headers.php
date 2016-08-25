@@ -206,6 +206,7 @@ class Swift_Message_Headers
   /**
    * Set the charset used in the headers
    * @param string The charset name
+   * @param string $charset
    */
   public function setCharset($charset)
   {
@@ -230,6 +231,7 @@ class Swift_Message_Headers
    *  - Base64
    * NOTE: Q, QP, Quoted-Printable are all the same; as are B and Base64
    * @param string The encoding format to use
+   * @param string $encoding
    * @return boolean
    */
   public function setEncoding($encoding)
@@ -293,6 +295,7 @@ class Swift_Message_Headers
    * Check if a header has a given attribute applied to it
    * @param string The name of the main header
    * @param string The name of the attribute
+   * @param string $name
    * @return boolean
    */
   public function hasAttribute($header, $name)
@@ -312,6 +315,8 @@ class Swift_Message_Headers
    * Get the value for a given attribute on a given header
    * @param string The name of the main header
    * @param string The name of the attribute
+   * @param string $header
+   * @param string $name
    * @return string
    * @throws Swift_Message_MimeException If no header is set
    */
@@ -483,6 +488,8 @@ class Swift_Message_Headers
    * and testing to get this working rock solid.
    * @param string The header built without attributes
    * @param string The lowercase name of the header
+   * @param string $header_line
+   * @param string $header_name
    * @return string
    * @throws Swift_Message_MimeException If no such header exists or there are no attributes
    */

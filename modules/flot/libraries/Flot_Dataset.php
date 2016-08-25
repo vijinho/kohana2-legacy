@@ -21,7 +21,7 @@ class Flot_Dataset_Core
      * @chainable
      * @param   numeric   x-axis plot position
      * @param   numeric   y-axis plot position
-     * @return  object
+     * @return  Flot_Dataset_Core
      */
     public function add($x, $y)
     {

@@ -168,8 +168,8 @@ class Gmap_Core
     /**
      * Returns an image map
      *
-     * @param mixed $lat latitude or an array of marker points
-     * @param float $lon longitude
+     * @param integer $lat latitude or an array of marker points
+     * @param integer $lon longitude
      * @param integer $zoom zoom level (1-19)
      * @param string $type map type (roadmap or mobile)
      * @param integer $width map width
@@ -216,7 +216,7 @@ class Gmap_Core
      * @param float $lon longitude
      * @param integer $zoom zoom level (1-19)
      * @param string $type default map type
-     * @return object
+     * @return Gmap_Core
      */
     public function center($lat, $lon, $zoom = 6, $type = 'G_NORMAL_MAP')
     {
@@ -234,7 +234,7 @@ class Gmap_Core
      *
      * @chainable
      * @param string $size small or large
-     * @return object
+     * @return Gmap_Core
      */
     public function controls($size = null)
     {
@@ -250,7 +250,7 @@ class Gmap_Core
      * @chainable
      * @param integer $width width
      * @param integer $height height
-     * @return object
+     * @return Gmap_Core
      */
     public function overview($width = '', $height = '')
     {
@@ -267,7 +267,7 @@ class Gmap_Core
      * @chainable
      * @param string $type map type
      * @param string $action add or remove map type
-     * @return object
+     * @return Gmap_Core
      */
     public function types($type = null, $action = 'remove')
     {
@@ -287,7 +287,7 @@ class Gmap_Core
      * @chainable
      * @param string $name icon name
      * @param array $options icon options
-     * @return object
+     * @return Gmap_Core
      */
     public function add_icon($name, array $options)
     {
@@ -305,7 +305,7 @@ class Gmap_Core
      * @param float $lon longitude
      * @param string $html HTML for info window
      * @param array $options marker options
-     * @return object
+     * @return Gmap_Core
      */
     public function add_marker($lat, $lon, $html = '', $options = array())
     {

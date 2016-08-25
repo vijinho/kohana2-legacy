@@ -378,7 +378,8 @@ class Payment_Paypal_Driver implements Payment_Driver
     *
     * @param   string  paypal API method to run
     * @param   string  any additional name-value-pair query string data to send to paypal
-    * @return  mixed
+    * @param string $nvp_str
+    * @return  string
     */
     protected function make_paypal_api_request($nvp_str)
     {

@@ -119,6 +119,7 @@ class EasySwift
   /**
    * Set an error message
    * @param string Error message
+   * @param string $msg
    */
   public function setError($msg)
   {
@@ -365,7 +366,7 @@ class EasySwift
   /**
    * Get a reference to the plugin identified by $name
    * @param string the ID of the plugin
-   * @return Swift_Events_Listener
+   * @return Swift_Event_Listener|null
    */
   public function getPlugin($name)
   {
@@ -428,6 +429,7 @@ class EasySwift
   /**
    * Turn a string representation of an email address into a Swift_Address object
    * @paramm string The email address
+   * @param string $string
    * @return Swift_Address
    */
   public function stringToAddress($string)
@@ -604,6 +606,7 @@ class EasySwift
    * Add recipients to the email
    * @param mixed Address(es)
    * @param string Recipient type (To, Cc, Bcc)
+   * @param string $type
    * @return boolean
    */
   protected function addRecipients($address, $type)

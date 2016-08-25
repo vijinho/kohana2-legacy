@@ -75,7 +75,7 @@ class Validation_Core extends ArrayObject
      *
      * @chainable
      * @param   array  new array to validate
-     * @return  Validation
+     * @return  Validation_Core
      */
     public function copy(array $array)
     {
@@ -176,7 +176,7 @@ class Validation_Core extends ArrayObject
      *
      * @chainable
      * @param   string   rule name
-     * @return  object
+     * @return  Validation_Core
      */
     public function allow_empty_rules($rules)
     {
@@ -192,7 +192,7 @@ class Validation_Core extends ArrayObject
     /**
      * Converts a filter, rule, or callback into a fully-qualified callback array.
      *
-     * @return  mixed
+     * @return  callable
      */
     protected function callback($callback)
     {
@@ -238,7 +238,7 @@ class Validation_Core extends ArrayObject
      * @chainable
      * @param   callback  filter
      * @param   string    fields to apply filter to, use TRUE for all fields
-     * @return  object
+     * @return  Validation_Core
      */
     public function pre_filter($filter, $field = true)
     {
@@ -269,7 +269,7 @@ class Validation_Core extends ArrayObject
      * @chainable
      * @param   callback  filter
      * @param   string    fields to apply filter to, use TRUE for all fields
-     * @return  object
+     * @return  Validation_Core
      */
     public function post_filter($filter, $field = true)
     {
@@ -300,7 +300,7 @@ class Validation_Core extends ArrayObject
      * @chainable
      * @param   string    field name
      * @param   callback  rules (one or more arguments)
-     * @return  object
+     * @return  Validation_Core
      */
     public function add_rules($field, $rules)
     {
@@ -350,7 +350,7 @@ class Validation_Core extends ArrayObject
      * @chainable
      * @param   string     field name
      * @param   callbacks  callbacks (unlimited number)
-     * @return  object
+     * @return  Validation_Core
      */
     public function add_callbacks($field, $callbacks)
     {
@@ -553,7 +553,7 @@ class Validation_Core extends ArrayObject
      * @chainable
      * @param   string  input name
      * @param   string  unique error name
-     * @return  object
+     * @return  Validation_Core
      */
     public function add_error($field, $name)
     {

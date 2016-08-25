@@ -134,6 +134,7 @@ final class utf8
      * Strips out device control codes in the ASCII range.
      *
      * @param   string  string to clean
+     * @param string $str
      * @return  string
      */
     public static function strip_ascii_ctrl($str)
@@ -201,6 +202,7 @@ final class utf8
      * @param   string   haystack
      * @param   string   needle
      * @param   integer  offset from which character in haystack to start searching
+     * @param string $str
      * @return  integer  position of needle
      * @return  boolean  FALSE if the needle is not found
      */
@@ -225,6 +227,7 @@ final class utf8
      * @param   string   haystack
      * @param   string   needle
      * @param   integer  offset from which character in haystack to start searching
+     * @param string $str
      * @return  integer  position of needle
      * @return  boolean  FALSE if the needle is not found
      */
@@ -314,6 +317,7 @@ final class utf8
      * @author  Andreas Gohr <andi@splitbrain.org>
      *
      * @param   string   mixed case string
+     * @param string $str
      * @return  string
      */
     public static function strtoupper($str)
@@ -525,6 +529,7 @@ final class utf8
      *
      * @param   string   input string
      * @param   integer  maximum length of each chunk
+     * @param string $str
      * @return  array
      */
     public static function str_split($str, $split_length = 1)
@@ -591,6 +596,7 @@ final class utf8
      *
      * @param   string   input string
      * @param   string   string of characters to remove
+     * @param string $str
      * @return  string
      */
     public static function ltrim($str, $charlist = null)

@@ -57,6 +57,7 @@ class Swift_Authenticator_PopB4Smtp_Pop3Connection
   /**
    * Set the server name
    * @param string The IP or FQDN of the POP3 server
+   * @param string $server
    */
   public function setServer($server)
   {
@@ -65,6 +66,7 @@ class Swift_Authenticator_PopB4Smtp_Pop3Connection
   /**
    * Set the port number for the POP3 server
    * @param int
+   * @param integer $port
    */
   public function setPort($port)
   {
@@ -89,6 +91,7 @@ class Swift_Authenticator_PopB4Smtp_Pop3Connection
   /**
    * Set the level of enryption to use (see ENC_OFF or ENC_SSL)
    * @param int The constant for the encryption level
+   * @param integer $enc
    */
   public function setEncryption($enc)
   {

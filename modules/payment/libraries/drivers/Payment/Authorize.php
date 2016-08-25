@@ -91,7 +91,7 @@ class Payment_Authorize_Driver implements Payment_Driver
     /**
      * Process a given transaction.
      *
-     * @return boolean
+     * @return boolean|null
      */
     public function process()
     {

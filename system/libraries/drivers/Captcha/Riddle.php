@@ -37,7 +37,7 @@ class Captcha_Riddle_Driver extends Captcha_Driver
      * Outputs the Captcha riddle.
      *
      * @param   boolean  html output
-     * @return  mixed
+     * @return  string
      */
     public function render($html)
     {

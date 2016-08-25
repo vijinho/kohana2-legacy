@@ -44,7 +44,7 @@ class Swift_BatchMailer
   
   /**
    * Constructor.
-   * @param Swift The current instance of Swift
+   * @param Swift Swift current instance of Swift
    */
   public function __construct(Swift $swift)
   {
@@ -52,7 +52,7 @@ class Swift_BatchMailer
   }
   /**
    * Set the current Swift instance.
-   * @param Swift The instance
+   * @param Swift Swift instance
    */
   public function setSwift(Swift $swift)
   {

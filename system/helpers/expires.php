@@ -41,7 +41,7 @@ class expires_Core
      * Checks to see if a page should be updated or send Not Modified status
      *
      * @param   integer  Seconds added to the modified time received to calculate what should be sent
-     * @return  bool     FALSE when the request needs to be updated
+     * @return  null|false     FALSE when the request needs to be updated
      */
     public static function check($seconds = 60)
     {

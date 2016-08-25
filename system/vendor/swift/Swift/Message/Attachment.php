@@ -124,6 +124,7 @@ class Swift_Message_Attachment extends Swift_Message_Mime
   /**
    * Set the disposition of the attachment (usually inline or attachment)
    * @param string The value to use in the Content-Disposition field
+   * @param string $disposition
    */
   public function setDisposition($disposition)
   {

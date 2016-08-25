@@ -129,7 +129,7 @@ class Image_Core
      * Handles retrieval of pre-save image properties
      *
      * @param   string  property name
-     * @return  mixed
+     * @return  string
      */
     public function __get($property)
     {
@@ -150,7 +150,7 @@ class Image_Core
      * @param   integer  width
      * @param   integer  height
      * @param   integer  one of: Image::NONE, Image::AUTO, Image::WIDTH, Image::HEIGHT
-     * @return  object
+     * @return  Image_Core
      */
     public function resize($width, $height, $master = null)
     {
@@ -192,7 +192,7 @@ class Image_Core
      * @param   integer  height
      * @param   integer  top offset, pixel value or one of: top, center, bottom
      * @param   integer  left offset, pixel value or one of: left, center, right
-     * @return  object
+     * @return  Image_Core
      */
     public function crop($width, $height, $top = 'center', $left = 'center')
     {
@@ -230,7 +230,7 @@ class Image_Core
      * Allows rotation of an image by 180 degrees clockwise or counter clockwise.
      *
      * @param   integer  degrees
-     * @return  object
+     * @return  Image_Core
      */
     public function rotate($degrees)
     {
@@ -260,7 +260,7 @@ class Image_Core
      *
      * @throws  Kohana_Exception
      * @param   integer  direction
-     * @return  object
+     * @return  Image_Core
      */
     public function flip($direction)
     {
@@ -277,7 +277,7 @@ class Image_Core
      * Change the quality of an image.
      *
      * @param   integer  quality as a percentage
-     * @return  object
+     * @return  Image_Core
      */
     public function quality($amount)
     {
@@ -290,7 +290,7 @@ class Image_Core
      * Sharpen an image.
      *
      * @param   integer  amount to sharpen, usually ~20 is ideal
-     * @return  object
+     * @return  Image_Core
      */
     public function sharpen($amount)
     {
@@ -372,6 +372,7 @@ class Image_Core
      *
      * @param   string   type of property
      * @param   mixed    property value
+     * @param string $type
      * @return  boolean
      */
     protected function valid_size($type, & $value)

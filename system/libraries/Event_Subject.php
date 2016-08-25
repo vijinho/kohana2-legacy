@@ -20,7 +20,7 @@ abstract class Event_Subject implements SplSubject
      *
      * @chainable
      * @param   object  Event_Observer
-     * @return  object
+     * @return  Event_Subject
      */
     public function attach(SplObserver $obj)
     {
@@ -39,7 +39,7 @@ abstract class Event_Subject implements SplSubject
      *
      * @chainable
      * @param   object  Event_Observer
-     * @return  object
+     * @return  Event_Subject
      */
     public function detach(SplObserver $obj)
     {
@@ -54,7 +54,7 @@ abstract class Event_Subject implements SplSubject
      *
      * @chainable
      * @param   mixed   message string, object, or array
-     * @return  object
+     * @return  Event_Subject
      */
     public function notify($message)
     {

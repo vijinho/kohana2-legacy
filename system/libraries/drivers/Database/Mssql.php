@@ -82,6 +82,9 @@ class Database_Mssql_Driver extends Database_Driver
         return false;
     }
 
+    /**
+     * @param string $sql
+     */
     public function query($sql)
     {
         // Only cache if it's turned on, and only cache if it's not a write statement
@@ -174,7 +177,7 @@ class Database_Mssql_Driver extends Database_Driver
      * functionality, a fancy query needs to be built.
      *
      * @param unknown_type $limit
-     * @return unknown
+     * @return string
      */
     public function limit($limit, $offset=null)
     {

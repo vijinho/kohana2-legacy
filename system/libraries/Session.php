@@ -290,7 +290,7 @@ class Session_Core
      *
      * @param   string|array  key, or array of values
      * @param   mixed         value (if keys is not an array)
-     * @return  void
+     * @return  false|null
      */
     public function set($keys, $val = false)
     {
@@ -317,7 +317,7 @@ class Session_Core
      *
      * @param   string|array  key, or array of values
      * @param   mixed         value (if keys is not an array)
-     * @return  void
+     * @return  false|null
      */
     public function set_flash($keys, $val = false)
     {

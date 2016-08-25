@@ -106,7 +106,7 @@ class Auth_ORM_Driver extends Auth_Driver
      * Forces a user to be logged in, without specifying a password.
      *
      * @param   mixed    username
-     * @return  boolean
+     * @return  boolean|null
      */
     public function force_login($user)
     {
@@ -200,7 +200,7 @@ class Auth_ORM_Driver extends Auth_Driver
      * session data: user_id, username, roles
      *
      * @param   object   user model object
-     * @return  void
+     * @return  boolean
      */
     protected function complete_login($user)
     {

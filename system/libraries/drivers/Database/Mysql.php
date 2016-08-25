@@ -74,6 +74,9 @@ class Database_Mysql_Driver extends Database_Driver
         return false;
     }
 
+    /**
+     * @param string $sql
+     */
     public function query($sql)
     {
         // Only cache if it's turned on, and only cache if it's not a write statement
@@ -326,6 +329,7 @@ class Mysql_Result extends Database_Result
      * @param  resource  database link
      * @param  boolean   return objects or arrays
      * @param  string    SQL query that was run
+     * @param resource $result
      */
     public function __construct($result, $link, $object = true, $sql)
     {

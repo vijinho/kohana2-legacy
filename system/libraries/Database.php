@@ -298,6 +298,7 @@ class Database_Core
      * Selects the from table(s) for a database query.
      *
      * @param   string  string or array of tables to select
+     * @param string|boolean $sql
      * @return  Database_Core  This Database object.
      */
     public function from($sql)
@@ -795,7 +796,7 @@ class Database_Core
      * @param   array   where clause
      * @param   string  limit clause
      * @param   string  offset clause
-     * @return  Database_Core  This Database object.
+     * @return  Database_Result  This Database object.
      */
     public function getwhere($table = '', $where = null, $limit = null, $offset = null)
     {
@@ -1120,6 +1121,7 @@ class Database_Core
      *
      * @param   string  query to bind to the values
      * @param   array   array of values to bind to the query
+     * @param string $sql
      * @return  string
      */
     public function compile_binds($sql, $binds)
@@ -1196,6 +1198,7 @@ class Database_Core
      * Escapes a table name for a query.
      *
      * @param   string  string to escape
+     * @param string $table
      * @return  string
      */
     public function escape_table($table)
@@ -1207,6 +1210,7 @@ class Database_Core
      * Escapes a column name for a query.
      *
      * @param   string  string to escape
+     * @param string $table
      * @return  string
      */
     public function escape_column($table)

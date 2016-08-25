@@ -19,7 +19,7 @@ class email_Core
      * Creates a SwiftMailer instance.
      *
      * @param   string  DSN connection string
-     * @return  object  Swift object
+     * @return  Swift  Swift object
      */
     public static function connect($config = null)
     {

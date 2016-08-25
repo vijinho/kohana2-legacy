@@ -31,6 +31,7 @@ interface Swift_Connection
   /**
    * Write a command to the buffer
    * @param string The command to send
+   * @param string $command
    * @throws Swift_ConnectionException If the write fails
    */
   public function write($command, $end="\r\n");
@@ -48,11 +49,13 @@ interface Swift_Connection
    * Add an extension which is available on this connection
    * @param string The name of the extension
    * @param array The list of attributes for the extension
+   * @return void
    */
   public function setExtension($name, $list=array());
   /**
    * Check if an extension exists by the name $name
    * @param string The name of the extension
+   * @param string $name
    * @return boolean
    */
   public function hasExtension($name);
@@ -66,6 +69,7 @@ interface Swift_Connection
   /**
    * Execute logic needed after SMTP greetings
    * @param Swift An instance of Swift
+   * @return void
    */
   public function postConnect(Swift $instance);
   /**
@@ -76,6 +80,7 @@ interface Swift_Connection
   /**
    * Set if the connection needs a EHLO greeting.
    * @param boolean
+   * @return void
    */
   public function setRequiresEHLO($set);
 }

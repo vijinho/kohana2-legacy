@@ -27,7 +27,7 @@ class Captcha_Black_Driver extends Captcha_Driver
      * Outputs the Captcha image.
      *
      * @param   boolean  html output
-     * @return  mixed
+     * @return  string|null
      */
     public function render($html)
     {

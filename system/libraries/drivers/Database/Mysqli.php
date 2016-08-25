@@ -129,6 +129,7 @@ class Kohana_Mysqli_Result extends Database_Result
      * @param  object    database link
      * @param  boolean   return objects or arrays
      * @param  string    SQL query that was run
+     * @param mysqli $link
      */
     public function __construct($link, $object = true, $sql)
     {

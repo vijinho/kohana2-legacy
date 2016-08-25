@@ -95,6 +95,7 @@ class Swift_RecipientList extends Swift_AddressContainer
   /**
    * Get an iterator object for all the recipients in the given field.
    * @param string The field name (to, cc or bcc)
+   * @param string $where
    * @return Swift_Iterator
    */
   public function getIterator($where)
@@ -124,6 +125,7 @@ class Swift_RecipientList extends Swift_AddressContainer
    * Add a To: recipient
    * @param mixed The address to add.  Can be a string or Swift_Address
    * @param string The personal name, optional
+   * @param Swift_Address $address
    */
   public function addTo($address, $name=null)
   {

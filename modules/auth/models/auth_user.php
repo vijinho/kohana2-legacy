@@ -136,7 +136,7 @@ class Auth_User_Model extends ORM
      * Validation Rule
      *
      * @param string $email
-     * @return void
+     * @return boolean
      */
     public function email_available($email)
     {

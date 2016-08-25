@@ -32,7 +32,7 @@ abstract class Event_Observer implements SplObserver
      *
      * @chainable
      * @param   object  Event_Subject
-     * @return  object
+     * @return  Event_Observer
      */
     public function update(SplSubject $caller)
     {
@@ -50,7 +50,7 @@ abstract class Event_Observer implements SplObserver
      * Detaches this observer from the subject.
      *
      * @chainable
-     * @return  object
+     * @return  Event_Observer
      */
     public function remove()
     {

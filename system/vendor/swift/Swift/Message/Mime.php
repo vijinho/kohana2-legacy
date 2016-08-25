@@ -126,6 +126,7 @@ abstract class Swift_Message_Mime
    * Replace the current headers with new ones
    * DO NOT DO THIS UNLESS YOU KNOW WHAT YOU'RE DOING!
    * @param Swift_Message_Headers The headers to use
+   * @param Swift_Message_Headers $headers
    */
   public function setHeaders($headers)
   {
@@ -134,6 +135,7 @@ abstract class Swift_Message_Mime
   /**
    * Set the line ending character to use
    * @param string The line ending sequence
+   * @param string $le
    * @return boolean
    */
   public function setLE($le)
@@ -377,6 +379,7 @@ abstract class Swift_Message_Mime
   /**
    * Set the size at which lines wrap around (includes the CRLF)
    * @param int The length of a line
+   * @param integer $len
    */
   public function setLineWrap($len)
   {

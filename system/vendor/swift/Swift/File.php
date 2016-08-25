@@ -161,6 +161,7 @@ class Swift_File
   /**
    * Read a given number of bytes from the file
    * Returns false past EOF
+   * @param integer $bytes
    * @return string
    * @throws Swift_FileException If the file cannot be read
    */
