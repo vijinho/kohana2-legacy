@@ -2,14 +2,6 @@ build:
     environment:
         php: '7.0.0'
 
-    tests:
-        override:
-            -
-#                command: 'phpunit --coverage-text --coverage-clover=coverage.clover tests/Enums/RunTest.php'
-                coverage:
-                    file: 'coverage.clover'
-                    format: 'php-clover'
-
 before_commands:
     - "composer install --prefer-source"
 
@@ -43,7 +35,6 @@ tools:
                 - 'docs/*'
                 - 'tests/*'
                 - 'lib/*'
-                - 'examples/*'
 
     php_code_coverage:
         enabled: true
@@ -52,7 +43,6 @@ tools:
                 - 'docs/*'
                 - 'tests/*'
                 - 'lib/*'
-                - 'examples/*'
 
     # The PSR-1 and PSR-2 Coding Standards fixer for your code
     # http://cs.sensiolabs.org
@@ -65,7 +55,6 @@ tools:
                 - 'docs/*'
                 - 'tests/*'
                 - 'lib/*'
-                - 'examples/*'
 
     # PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files to detect and fix violations of a defined set of coding standards.
     # http://pear.php.net/package/PHP_CodeSniffer/
@@ -80,7 +69,9 @@ tools:
         filter:
             paths: ['src']
             excluded_paths:
+                - 'docs/*'
                 - 'tests/*'
+                - 'lib/*'
 
     # Analyzes the size and structure of a PHP project.
     # https://github.com/sebastianbergmann/phploc
@@ -90,7 +81,6 @@ tools:
             - docs
             - lib
             - tests
-            - examples
 
     # Copy/Paste Detector
     # https://github.com/sebastianbergmann/phpcpd
@@ -100,7 +90,6 @@ tools:
             - docs
             - lib
             - tests
-            - examples
 
     # Analyzes the size and structure of a PHP project.
     # https://pdepend.org
@@ -110,7 +99,6 @@ tools:
             - docs
             - tests
             - lib
-            - examples
 
     # PHP Mess Detector
     # It takes a given PHP source code base and look for several potential problems within that source.
