@@ -1,0 +1,164 @@
+build:
+    environment:
+        php: '7.0.0'
+
+    tests:
+        override:
+            -
+#                command: 'phpunit --coverage-text --coverage-clover=coverage.clover tests/Enums/RunTest.php'
+                coverage:
+                    file: 'coverage.clover'
+                    format: 'php-clover'
+
+before_commands:
+    - "composer install --prefer-source"
+
+filter:
+    excluded_paths:
+        - tests/*
+
+checks:
+    php:
+        code_rating: true
+        remove_extra_empty_lines: true
+        remove_php_closing_tag: true
+        remove_trailing_whitespace: true
+        fix_use_statements:
+            remove_unused: true
+            preserve_multiple: false
+            preserve_blanklines: true
+            order_alphabetically: true
+        fix_php_opening_tag: true
+        fix_linefeed: true
+        fix_line_ending: true
+        fix_identation_4spaces: true
+        fix_doc_comments: true
+tools:
+    external_code_coverage:
+        enabled: false
+        timeout: 1800
+        runs: 4
+        filter:
+            excluded_paths:
+                - 'docs/*'
+                - 'tests/*'
+                - 'lib/*'
+                - 'examples/*'
+
+    php_code_coverage:
+        enabled: true
+        filter:
+            excluded_paths:
+                - 'docs/*'
+                - 'tests/*'
+                - 'lib/*'
+                - 'examples/*'
+
+    # The PSR-1 and PSR-2 Coding Standards fixer for your code
+    # http://cs.sensiolabs.org
+    php_cs_fixer:
+        enabled: true
+        config:
+            level: psr2
+        filter:
+            excluded_paths:
+                - 'docs/*'
+                - 'tests/*'
+                - 'lib/*'
+                - 'examples/*'
+
+    # PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files to detect and fix violations of a defined set of coding standards.
+    # http://pear.php.net/package/PHP_CodeSniffer/
+    php_code_sniffer:
+        enabled: true
+        config:
+            standard: PSR2
+            sniffs:
+                generic:
+                    files:
+                        one_class_per_file_sniff: false
+        filter:
+            paths: ['src']
+            excluded_paths:
+                - 'tests/*'
+
+    # Analyzes the size and structure of a PHP project.
+    # https://github.com/sebastianbergmann/phploc
+    php_loc:
+        enabled: true
+        excluded_dirs:
+            - docs
+            - lib
+            - tests
+            - examples
+
+    # Copy/Paste Detector
+    # https://github.com/sebastianbergmann/phpcpd
+    php_cpd:
+        enabled: false
+        excluded_dirs:
+            - docs
+            - lib
+            - tests
+            - examples
+
+    # Analyzes the size and structure of a PHP project.
+    # https://pdepend.org
+    php_pdepend:
+        enabled: true
+        excluded_dirs:
+            - docs
+            - tests
+            - lib
+            - examples
+
+    # PHP Mess Detector
+    # It takes a given PHP source code base and look for several potential problems within that source.
+    # http://phpmd.org
+    php_mess_detector:
+        enabled: true
+        config:
+            rulesets:
+                - codesize
+                - unusedcode
+                - naming
+                - design
+            naming_rules:
+                short_variable: { minimum: 3 }
+        filter:
+            excluded_paths:
+                - 'tests/*'
+
+    # Runs Scrutinizer's PHP Analyzer Tool
+    # https://scrutinizer-ci.com/docs/tools/php/php-analyzer/config_reference
+    php_analyzer:
+        enabled: true
+        extensions:
+            - php
+            - phtml
+
+        config:
+            security_analysis:
+                enabled: true
+            checkstyle:
+                enabled: true
+                naming:
+                    enabled: false
+            type_scanning:
+                raise_duplicate_warnings:  true
+            verify_php_doc_comments:
+                parameters:  true
+                return: true
+                suggest_more_specific_types:  true
+                ask_for_return_if_not_inferrable:  true
+            simplify_boolean_return:
+                enabled: true
+            phpunit_checks:
+                enabled: false
+            # Checks Common Precedence Mistakes
+            reflection_fixes:
+                enabled:  true
+
+    # Security Advisory Checker
+    # https://security.sensiolabs.org
+    sensiolabs_security_checker: true

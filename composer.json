@@ -1,0 +1,17 @@
+{
+    "name": "vijinho/kohana2-legacy",
+    "description": "PHP",
+    "keywords": ["php", "kohana", "kohana framework"],
+    "homepage": "https://github.com/vijinho/kohana2-legacy",
+    "license": "GPL-3.0",
+    "type": "library",
+    "config": {
+        "vendor-dir": "lib"
+    },
+    "autoload": {
+        "classmap": ["application", "modules", "system", "lib"]
+    },
+    "require": {
+		"php": ">=5.6"
+	}
+}
